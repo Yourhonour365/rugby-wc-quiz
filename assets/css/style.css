@@ -1,0 +1,6 @@
+body {
+  background-color: var(--wales-bg);
+  font-family: sans-serif;
+  color: var(--wales-dark);
+  padding: 2rem;
+}
