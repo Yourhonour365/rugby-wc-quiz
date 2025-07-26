@@ -4,88 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RWC Quiz Battle</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="assets/images/site.webmanifest" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-     <!-- link to font awesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+   
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS Styling -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+
   <body>
     <div class="page-wrapper">
-    <!-- Navbar (from bootstrap to test) -->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark"
-      style="background-color: #164A1A"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">RWC Quiz</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="battle.html">Battle</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="info.html">Info</a>
-            </li>
-          </ul>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #164A1A">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">RWC Quiz</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="battle.html">Battle</a></li>
+              <li class="nav-item"><a class="nav-link" href="info.html">Info</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <!-- Test content -->
-    <main class="container mt-5 text-center">
-      <h1 class="display-4" style="color: #FFFF;">Welcome to Rugby Quiz</h1>
-      <p class="lead" style="color: #FFFF;">Test Boostrap</p>
-    </main>
-<footer>
-  <p>&copy; 2025 RWC Quiz Battle. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://instagram.com/yourhandle" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="X (Twitter)">
-      <i class="fab fa-x-twitter"></i>
-    </a>
+      <!-- Main content area for pages -->
+      <main>
+  <div class="container-fluid d-flex flex-column justify-content-center" style="background-color: var(--stadium-gray, #6E6E6E); color: white;">
+    <div class="row flex-grow-1 align-items-center">
+      <div class="col-12 text-center p-4">
+        <h2>Page Heading</h2>
+        <p>Content goes here...</p>
+      </div>
+    </div>
   </div>
-</footer>
+</main>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 RWC Quiz. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://x.com/" target="_blank" aria-label="X (Twitter)">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
-  </div>
-</body>
-
+  </body>
 </html>

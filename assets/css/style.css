@@ -65,10 +65,15 @@
   --sa-white: #FFFFFF;
 }
 
-/* Page setup for sticky footer */
+/* Layout for sticky footer */
 html, body {
   height: 100%;
   margin: 0;
+}
+
+body {
+  background-color: var(--turf-medium);
+  font-family: 'Roboto', 'Open Sans', sans-serif;
 }
 
 .page-wrapper {
@@ -77,32 +82,25 @@ html, body {
   min-height: 100vh;
 }
 
+main {
+  flex: 1;
+  display: flex;
+  align-items: stretch; /* for full height for templates */
+}
+
+/* Navbar Styles */
 .navbar .nav-link {
   color: white;
   transition: color 0.3s ease;
 }
 
-.navbar .nav-link:hover {
-  color: var(--argentina-sky, #74ACDF); 
-}
-
+.navbar .nav-link:hover,
 .navbar .nav-link.active {
   color: var(--argentina-sky, #74ACDF);
   font-weight: 600;
 }
-main {
-  flex: 1;
-}
 
-
-body {
-  background-color: var(--turf-medium);
-  font-family: 'Roboto', 'Open Sans', sans-serif;
-}
-
-/* ===========================================
-   Footer Styles
-=========================================== */
+/* Footer Styles */
 footer {
   background-color: var(--turf-dark, #164A1A);
   color: white;
