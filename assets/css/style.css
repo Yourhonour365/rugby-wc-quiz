@@ -64,6 +64,65 @@
   --sa-gold: #FFB81C;
   --sa-white: #FFFFFF;
 }
+
+/* Page setup for sticky footer */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar .nav-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--argentina-sky, #74ACDF); 
+}
+
+.navbar .nav-link.active {
+  color: var(--argentina-sky, #74ACDF);
+  font-weight: 600;
+}
+main {
+  flex: 1;
+}
+
+
 body {
-  background-color: #388E3C;
+  background-color: var(--turf-medium);
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+
+/* ===========================================
+   Footer Styles
+=========================================== */
+footer {
+  background-color: var(--turf-dark, #164A1A);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+footer .social-icons {
+  margin-top: 0.5rem;
+}
+
+footer .social-icons a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: var(--argentina-sky, #74ACDF);
 }
