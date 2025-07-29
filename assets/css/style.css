@@ -1,98 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  /* Stadium Colours */
-  --stadium-gray-light: #BDBDBD;
-  --stadium-gray: #6E6E6E;
-  --stadium-gray-dark: #424242;
-
-  /* Turf Colours */
-  --turf-light: #7CB342;
-  --turf-medium: #2C6B2F;
   --turf-dark: #164A1A;
-
-  /* Turf Line Colours */
-  --turf-line-white: #FFFFFF;
-  --turf-line-faded: #F0F0F0;
-  --turf-line-shadow: rgba(255, 255, 255, 0.2);
-
-  /* Italy */
-  --italy-blue: #0096D6;
-  --italy-green: #008C45;
-  --italy-white: #FFFFFF;
-
-  /* Ireland */
-  --ireland-green: #169B62;
-  --ireland-orange: #FF883E;
-  --ireland-white: #FFFFFF;
-
-  /* Scotland */
-  --scotland-blue: #002663;
-  --scotland-white: #FFFFFF;
-
-  /* Wales */
-  --wales-red: #D30731;
-  --wales-green: #007A33;
-  --wales-white: #FFFFFF;
-
-  /* Argentina */
+  --turf-medium: #2C6B2F;
   --argentina-sky: #74ACDF;
-  --argentina-white: #FFFFFF;
-
-  /* Australia */
-  --australia-gold: #FFCC00;
-  --australia-green: #006847;
-  --australia-white: #FFFFFF;
-
-  /* England */
-  --england-red: #C8102E;
-  --england-navy: #002147;
-  --england-white: #FFFFFF;
-
-  /* France */
-  --france-blue: #0055A4;
-  --france-red: #EF4135;
-  --france-white: #FFFFFF;
-
-  /* New Zealand */
-  --nz-black: #000000;
-  --nz-silver: #C0C0C0;
-  --nz-white: #FFFFFF;
-
-  /* South Africa */
-  --sa-green: #006847;
-  --sa-gold: #FFB81C;
-  --sa-white: #FFFFFF;
 }
 
 /* Global */
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
   overflow-x: hidden;
-}
-
-body {
   background-color: var(--turf-medium);
   font-family: 'Roboto', 'Open Sans', sans-serif;
-  color: #fff;
+  color: white;
 }
 
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow: hidden;
 }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
 /* Navbar */
 .navbar .nav-link {
   color: white;
   transition: color 0.3s ease;
+  z-index: 10;
+  position: relative;
 }
 
 .navbar .nav-link:hover,
@@ -101,10 +38,8 @@ main {
   font-weight: 600;
 }
 
-
-/* Hero Section */
 .hero-section {
-  background-image: url('../images/130-stadium.png'); 
+  background-image: url('../images/130-stadium.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -124,7 +59,7 @@ main {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -133,20 +68,22 @@ main {
   z-index: 2;
 }
 
-.hero-section h1,
-.hero-section p {
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+/* Stadium Field Image */
+.stadium-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--turf-dark);
+  margin-top: 0px; /* Adjust if your navbar is fixed */
 }
 
-.hero-section h1 {
-  font-size: 3rem;
+.stadium-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 0;
 }
-
-.hero-section p {
-  font-size: 1.25rem;
-}
-
-
 
 /* Footer */
 footer {
@@ -172,16 +109,4 @@ footer .social-icons a {
 
 footer .social-icons a:hover {
   color: var(--argentina-sky);
-}
-
-
-
-@media (min-width: 768px) {
-  .hero-section h1 {
-    font-size: 4.5rem;
-  }
-
-  .hero-section p {
-    font-size: 1.5rem;
-  }
 }
