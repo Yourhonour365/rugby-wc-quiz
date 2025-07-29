@@ -6,21 +6,29 @@
   --argentina-sky: #74ACDF;
 }
 
-/* Global */
+/* Global Layout */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  background-color: var(--turf-medium);
   font-family: 'Roboto', 'Open Sans', sans-serif;
+  background-color: var(--turf-medium);
   color: white;
+  overflow-x: hidden;
 }
 
-.page-wrapper {
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -38,18 +46,24 @@ html, body {
   font-weight: 600;
 }
 
+/* Hero Section */
 .hero-section {
   background-image: url('../images/130-stadium.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 60vh;
-  position: relative;
+  background-color: var(--turf-dark);
+  min-height: calc(100vh - 120px); /* Adjust for navbar + footer height */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  width: 100%;
+  
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
   color: white;
 }
 
@@ -68,35 +82,27 @@ html, body {
   z-index: 2;
 }
 
-/* Stadium Field Image */
+/* Field Image Section */
 .stadium-image-wrapper {
-  width: 100%;
-  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   background-color: var(--turf-dark);
-  margin-top: 0px; /* Adjust if your navbar is fixed */
-}
-
-.stadium-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-top: 0;
-}
-.stadium-image-wrapper {
-  position: relative;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+  min-height: 60vh;
 }
 
 .stadium-image {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
-/* Centered Scoreboard Overlay */
+/* Scoreboard Overlay */
 .center-scoreboard {
   position: absolute;
   top: 50%;
@@ -111,12 +117,14 @@ html, body {
   display: flex;
   align-items: center;
   z-index: 2;
+  pointer-events: none;
 }
 
-/* Separator styling (dash) */
 .score-separator {
   margin: 0 0.5rem;
 }
+
+/* Accordion */
 .accordion-button:focus {
   box-shadow: none;
 }
@@ -124,8 +132,9 @@ html, body {
 .accordion-button:not(.collapsed) {
   background-color: var(--turf-medium);
   color: white;
-  radius: 0;
+  border-radius: 0;
 }
+
 .accordion-item .accordion-header > div {
   font-weight: bold;
   font-size: 1.1rem;
@@ -135,8 +144,18 @@ html, body {
 .accordion-item {
   border-radius: 0 !important;
 }
+
+form input,
+form textarea,
+form select,
+form button {
+  border-radius: 0 !important;
+}
+
+
 /* Footer */
 footer {
+  flex-shrink: 0;
   background-color: var(--turf-dark);
   color: white;
   text-align: center;
@@ -159,4 +178,18 @@ footer .social-icons a {
 
 footer .social-icons a:hover {
   color: var(--argentina-sky);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh; /* Already good */
+    background-position: center top;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero-section {
+    min-height: calc(100vh - 100px); /* Leaves space for footer */
+  }
 }

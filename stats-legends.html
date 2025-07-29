@@ -20,10 +20,10 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
-  <body>
-    <div class="page-wrapper d-flex flex-column min-vh-100">
-      
-      <!-- Navigation -->
+  <!--BODY MAIN WRAPPER-->
+  <body class="d-flex flex-column min-vh-100">
+  
+  <!--NAVBAR-->
       <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #164A1A">
         <div class="container-fluid">
           <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Home">
@@ -42,17 +42,24 @@
           </div>
         </div>
       </nav>
+ 
+    
+      <!--MAIN CONTENT CONTAINER FOR SECTIONS-->
+          <main class="flex-grow-1">
 
-     <!-- Main content area -->
-<main class="flex-grow-1">
-  <section class="container py-5">
-    <h2 class="text-center mb-4">Knowledge Zone</h2>
+          <!--NO HERO SECTION-->
 
-    <!-- MAIN Accordion -->
-    <div class="accordion" id="knowledgeAccordion">
+
+
+              <!--SECTION CONTAINER FOR ACCORDIONS-->
+              <section class="container py-5">
+              <h2 class="text-center mb-4">Knowledge Zone</h2>
+
+                <!-- MAIN Accordion -->
+               <div class="accordion" id="knowledgeAccordion">
       
-      <!-- Teams -->
-      <div class="accordion-item bg-dark text-white border-light">
+                 <!-- Teams -->
+                <div class="accordion-item bg-dark text-white border-light">
         <h2 class="accordion-header" id="headingTeams">
           <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTeams" aria-expanded="false" aria-controls="collapseTeams">
             Teams
@@ -130,10 +137,10 @@
 
           </div>
         </div>
-      </div>
+                </div>
       
-      <!-- Legends -->
-      <div class="accordion-item bg-dark text-white border-0">
+                <!-- Legends -->
+               <div class="accordion-item bg-dark text-white border-0">
         <h2 class="accordion-header" id="headingLegends">
           <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLegends" aria-expanded="false" aria-controls="collapseLegends">
             Legends
@@ -149,10 +156,10 @@
             </div>
           </div>
         </div>
-      </div>
+               </div>
 
-      <!-- Records -->
-      <div class="accordion-item bg-dark text-white border-0">
+               <!-- Records -->
+               <div class="accordion-item bg-dark text-white border-0">
         <h2 class="accordion-header" id="headingRecords">
           <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRecords" aria-expanded="false" aria-controls="collapseRecords">
             Performance Records
@@ -253,10 +260,10 @@
 
 </div>
         </div>
-      </div>
+              </div>
 
-      <!-- Results -->
-      <div class="accordion-item bg-dark text-white border-0">
+              <!-- Results -->
+              <div class="accordion-item bg-dark text-white border-0">
         <h2 class="accordion-header" id="headingResults">
           <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResults" aria-expanded="false" aria-controls="collapseResults">
             Tournament Results
@@ -357,12 +364,19 @@
 
 </div>
         </div>
-      </div>
+              </div>
 
-    </div> <!-- /#knowledgeAccordion -->
-  </section>
-</main>
-      <!-- Footer -->
+              </div> 
+              </section>
+              <!--END SECTION FOR ACCORDIONS-->
+
+
+
+              
+          </main>
+
+
+      <!--FOOTER-->
       <footer class="text-center mt-auto py-3" style="background-color: #164A1A; color: white;">
         <div class="social-icons">
           <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-lg mx-2"></i></a>
