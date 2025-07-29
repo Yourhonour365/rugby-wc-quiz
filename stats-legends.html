@@ -43,15 +43,46 @@
 
       <!-- Main content area -->
       <main class="flex-grow-1">
-        <div class="container-fluid d-flex flex-column justify-content-center" style="background-color: var(--stadium-gray, #6E6E6E); color: white;">
-          <div class="row flex-grow-1 align-items-center">
-            <div class="col-12 text-center p-4">
-              <h2>Page Heading</h2>
-              <p>Content goes here...</p>
-            </div>
-          </div>
-        </div>
-      </main>
+  <section class="container py-5">
+    <h2 class="text-center mb-4">The Knowledge Zone</h2>
+
+    <div class="d-grid gap-3 col-12 col-md-8 mx-auto mb-4">
+      <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#teamsInfo" aria-expanded="false" aria-controls="teamsInfo">Teams</button>
+      <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#legendsInfo" aria-expanded="false" aria-controls="legendsInfo">Legends</button>
+      <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#recordsInfo" aria-expanded="false" aria-controls="recordsInfo">Performance Records</button>
+      <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#resultsInfo" aria-expanded="false" aria-controls="resultsInfo">Tournament Results</button>
+    </div>
+
+    <!-- Info Panels -->
+    <div class="collapse" id="teamsInfo">
+      <div class="card card-body text-bg-dark mb-3">
+        <h5>Rugby World Cup Teams</h5>
+        <p>Explore the national teams, their nicknames, uniforms, and World Cup appearances. From the All Blacks to the Springboks, dive into team facts that help with the quiz.</p>
+      </div>
+    </div>
+
+    <div class="collapse" id="legendsInfo">
+      <div class="card card-body text-bg-dark mb-3">
+        <h5>Rugby Legends</h5>
+        <p>Read about iconic players like Jonah Lomu, Richie McCaw, Brian O’Driscoll, and Siya Kolisi. Learn their records and unforgettable moments.</p>
+      </div>
+    </div>
+
+    <div class="collapse" id="recordsInfo">
+      <div class="card card-body text-bg-dark mb-3">
+        <h5>Performance Records</h5>
+        <p>Highest scoring matches, fastest tries, most appearances, biggest comebacks — all the stats that turn you into a quiz master.</p>
+      </div>
+    </div>
+
+    <div class="collapse" id="resultsInfo">
+      <div class="card card-body text-bg-dark mb-3">
+        <h5>Tournament Results</h5>
+        <p>Full list of winners, runners-up, and host nations. Use this section to track tournament history and score bonus points in the quiz.</p>
+      </div>
+    </div>
+  </section>
+</main>
 
       <!-- Footer -->
       <footer class="text-center mt-auto py-3" style="background-color: #164A1A; color: white;">
