@@ -124,11 +124,16 @@ html, body {
 .accordion-button:not(.collapsed) {
   background-color: var(--turf-medium);
   color: white;
+  radius: 0;
 }
 .accordion-item .accordion-header > div {
   font-weight: bold;
   font-size: 1.1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-item {
+  border-radius: 0 !important;
 }
 /* Footer */
 footer {
