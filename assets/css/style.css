@@ -84,6 +84,39 @@ html, body {
   object-fit: contain;
   margin-top: 0;
 }
+.stadium-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.stadium-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Centered Scoreboard Overlay */
+.center-scoreboard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Separator styling (dash) */
+.score-separator {
+  margin: 0 0.5rem;
+}
 .accordion-button:focus {
   box-shadow: none;
 }
