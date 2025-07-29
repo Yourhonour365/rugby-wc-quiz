@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  /* Stadium Colors */
+  /* Stadium Colours */
   --stadium-gray-light: #BDBDBD;
   --stadium-gray: #6E6E6E;
   --stadium-gray-dark: #424242;
 
-  /* Turf Colors */
+  /* Turf Colours */
   --turf-light: #7CB342;
   --turf-medium: #2C6B2F;
   --turf-dark: #164A1A;
 
-  /* Turf Line Colors */
+  /* Turf Line Colours */
   --turf-line-white: #FFFFFF;
   --turf-line-faded: #F0F0F0;
   --turf-line-shadow: rgba(255, 255, 255, 0.2);
@@ -65,15 +65,17 @@
   --sa-white: #FFFFFF;
 }
 
-/* Layout for sticky footer */
+/* Global */
 html, body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--turf-medium);
   font-family: 'Roboto', 'Open Sans', sans-serif;
+  color: #fff;
 }
 
 .page-wrapper {
@@ -85,10 +87,9 @@ body {
 main {
   flex: 1;
   display: flex;
-  align-items: stretch; /* for full height for templates */
+  flex-direction: column;
 }
-
-/* Navbar Styles */
+/* Navbar */
 .navbar .nav-link {
   color: white;
   transition: color 0.3s ease;
@@ -96,17 +97,64 @@ main {
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-  color: var(--argentina-sky, #74ACDF);
+  color: var(--argentina-sky);
   font-weight: 600;
 }
 
-/* Footer Styles */
+
+/* Hero Section */
+.hero-section {
+  background-image: url('../images/130-stadium.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1,
+.hero-section p {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+}
+
+
+
+/* Footer */
 footer {
-  background-color: var(--turf-dark, #164A1A);
+  background-color: var(--turf-dark);
   color: white;
   text-align: center;
   padding: 1rem 0;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
 }
 
 footer .social-icons {
@@ -119,8 +167,21 @@ footer .social-icons a {
   font-size: 1.5rem;
   text-decoration: none;
   transition: color 0.3s ease;
+  vertical-align: middle;
 }
 
 footer .social-icons a:hover {
-  color: var(--argentina-sky, #74ACDF);
+  color: var(--argentina-sky);
+}
+
+
+
+@media (min-width: 768px) {
+  .hero-section h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.5rem;
+  }
 }

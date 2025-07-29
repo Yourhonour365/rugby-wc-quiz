@@ -9,20 +9,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
-   
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- CSS Styling -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-    <div class="page-wrapper">
-      <!-- Navigation -->
+    <div class="page-wrapper d-flex flex-column min-vh-100">
+
+      <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #164A1A">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">RWC Quiz Battle</a>
@@ -40,31 +41,26 @@
         </div>
       </nav>
 
-      <!-- Main content area for pages -->
-      <main>
-  <div class="container-fluid d-flex flex-column justify-content-center" style="background-color: var(--stadium-gray, #6E6E6E); color: white;">
-    <div class="row flex-grow-1 align-items-center">
-      <div class="col-12 text-center p-4">
-        <h2>Page Heading</h2>
-        <p>Content goes here...</p>
-      </div>
-    </div>
-  </div>
-</main>
+      <!-- Hero section-->
+      <main class="flex-grow-1">
+        <section class="hero-section d-flex align-items-center justify-content-center text-center">
+          <div class="container">
+            <h1 class="display-3 fw-bold">Rugby World Cup Quiz</h1>
+            <p class="lead">Score like a champion!</p>
+            <a href="play.html" class="btn btn-light btn-lg mt-3">Login</a><br>
+            <a href="play.html" class="btn btn-light btn-lg mt-3">Sign up</a>
+          </div>
+        </section>
+      </main>
 
       <!-- Footer -->
-      <footer>
-        <p>&copy; 2025 RWC Quiz. All rights reserved.</p>
+      <footer class="text-center mt-auto py-3" style="background-color: #164A1A; color: white;">
         <div class="social-icons">
-          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://x.com/" target="_blank" aria-label="X (Twitter)">
-            <i class="fab fa-x-twitter"></i>
-          </a>
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-lg mx-2"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-lg mx-2"></i></a>
+          <a href="https://x.com/" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter fa-lg mx-2"></i></a>
+          <a href="#" aria-label="Share"><i class="fa-solid fa-square-share-nodes fa-lg mx-2"></i></a>
+          <p class="mb-1 mt-1">&copy; 2025 RWC Quiz. All rights reserved.</p>
         </div>
       </footer>
     </div>
