@@ -1,13 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-/* GLOBAL STYLES */
+/* ROOT COLOURS */
 :root {
   --turf-dark: #164A1A;
   --turf-medium: #2C6B2F;
+  --turf-light: #7CB342;
+  --stadium-gray: #6E6E6E;
   --argentina-sky: #74ACDF;
+  --italy-blue: #0096D6;
+  --ireland-green: #169B62;
+  --scotland-blue: #002663;
+  --wales-red: #D30731;
+  --southafrica-green: #006847;
+  --australia-gold: #FFB81C;
+   --france-blue: #0055A4;
+   --england-red: #C8102E;
+   --new-zealand-black: #000000;
+ 
 }
 
+/* GLOBAL STYLES */
 html, body {
   height: 100%;
   margin: 0;
@@ -28,7 +40,6 @@ main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 /* NAVBAR */
@@ -52,15 +63,14 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--turf-dark);
-  min-height: calc(100vh - 120px); /* Adjust for navbar + footer height */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
   width: 100%;
-  
+  min-height: calc(100dvh - 56px - 80px);
   padding: 2rem;
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
   position: relative;
   overflow: hidden;
   color: white;
@@ -123,7 +133,14 @@ main {
   margin: 0 0.5rem;
 }
 
-/* ACCORDION SECTION */
+/* ACCORDIONS */
+
+.accordion-body {
+background-color: var(--southafrica-green);
+
+}
+
+
 .accordion-button:focus {
   box-shadow: none;
 }
@@ -132,6 +149,10 @@ main {
   background-color: var(--turf-medium);
   color: white;
   border-radius: 0;
+}
+
+.accordion-button::after {
+  filter: brightness(0) invert(1); /* makes the arrow white */
 }
 
 .accordion-item .accordion-header > div {
@@ -144,6 +165,32 @@ main {
   border-radius: 0 !important;
 }
 
+#teams-button {
+  background-color: #164A1A !important; 
+}
+
+#legends-button
+{
+  background-color: #2C6B2F !important; 
+}
+
+#records-button {
+  background-color: #164A1A !important; 
+}
+
+#results-button {
+  background-color: #2C6B2F !important; 
+}
+
+/* FEEDBACK PAGE */
+.feedback-section {
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+}
+
+form {
+  padding-bottom: 4rem;
+}
+
 form input,
 form textarea,
 form select,
@@ -151,19 +198,20 @@ form button {
   border-radius: 0 !important;
 }
 
-
 /* FOOTER */
 footer {
   flex-shrink: 0;
   background-color: var(--turf-dark);
   color: white;
   text-align: center;
+  padding: 1rem 0;
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
   font-size: 0.6rem;
-  padding: 1rem env(safe-area-inset-right) calc(1rem + env(safe-area-inset-bottom)) env(safe-area-inset-left); /* prevents footer being hidden on iphones */
 }
 
 footer .social-icons {
   margin-top: 0.5rem;
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
 }
 
 footer .social-icons a {
@@ -182,13 +230,7 @@ footer .social-icons a:hover {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 80vh; 
+    min-height: calc(100dvh - 56px - 80px);
     background-position: center top;
-  }
-}
-
-@media (min-width: 769px) {
-  .hero-section {
-    min-height: calc(100vh - 100px); /* Leaves space for footer */
   }
 }
