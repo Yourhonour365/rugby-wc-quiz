@@ -283,6 +283,12 @@ select::placeholder {
   table-layout: fixed;
   width: 100%;
 }
+.results-tables td,
+.results-tables th,
+.records-tables td,
+.records-tables th {
+  vertical-align: middle;
+}
 
 /* FOOTER */
 footer {
