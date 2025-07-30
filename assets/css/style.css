@@ -12,7 +12,7 @@
   --scotland-blue: #002663;
   --wales-red: #D30731;
   --southafrica-green: #006847;
-  --australia-gold: #FFB81C;
+  --australia-gold: #CC9900;
    --france-blue: #0055A4;
    --england-red: #C8102E;
    --new-zealand-black: #000000;
@@ -181,6 +181,67 @@ background-color: var(--southafrica-green);
 #results-button {
   background-color: #2C6B2F !important; 
 }
+
+.new-zealand {
+background-color: var(--new-zealand-black) !important;
+border-radius: 0 !important;
+ 
+}
+.south-africa {
+background-color: var(--south-africa-green) !important;
+border-radius: 0 !important;  
+}
+.france {
+background-color: var(--france-blue) !important;
+border-radius: 0 !important;  
+}
+
+.Argentina {
+background-color: var(--argentina-sky) !important;
+border-radius: 0 !important;  
+}
+.Australia {
+background-color: var(--australia-gold) !important;
+border-radius: 0 !important;  
+}
+.England {
+background-color: var(--england-red) !important;
+border-radius: 0 !important;  
+}
+.Ireland {
+background-color: var(--ireland-green) !important;
+border-radius: 0 !important;  
+}
+.Italy {
+background-color: var(--italy-blue) !important;
+border-radius: 0 !important;  
+}
+.Scotland {
+background-color: var(--scotland-blue) !important;
+border-radius: 0 !important;  
+}
+.Wales {
+background-color: var(--wales-red) !important;
+border-radius: 0 !important;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* FEEDBACK PAGE */
 .feedback-section {
