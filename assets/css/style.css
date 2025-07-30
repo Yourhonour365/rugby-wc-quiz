@@ -253,7 +253,11 @@ select::placeholder {
   color: #ccc !important; /* Light grey */
   opacity: 1 !important;  /* Ensures full visibility */
 }
-
+.card-img-top {
+  height: 200px;         /* or any desired uniform height */
+  object-fit: contain; /* Keeps full image visible */
+  background-color: #000; /* Optional: fills space if image is smaller */
+}
 /* FOOTER */
 footer {
   flex-shrink: 0;
