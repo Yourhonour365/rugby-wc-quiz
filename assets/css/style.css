@@ -321,8 +321,17 @@ footer .social-icons a:hover {
   }
 }
 @media (max-width: 576px) {
-  .accordion-body h5 {
-    font-size: 1rem; /* Default h5 is ~1.25rem */
+  .accordion-body h4 {
+    font-size: 0.75rem; /* Default h5 is ~1.25rem */
     margin-top: 0.5rem;
   }
 }
+
+@media (max-width: 576px) {
+  .results-tables h5,
+  .records-tables h5 {
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+}
+
