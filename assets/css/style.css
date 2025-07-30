@@ -160,6 +160,7 @@ footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.6rem;
+  padding: 1rem env(safe-area-inset-right) calc(1rem + env(safe-area-inset-bottom)) env(safe-area-inset-left); /* prevents footer being hidden on iphones */
 }
 
 footer .social-icons {
