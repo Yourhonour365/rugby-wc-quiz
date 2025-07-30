@@ -258,6 +258,24 @@ select::placeholder {
   object-fit: contain; /* Keeps full image visible */
   background-color: #000; /* Optional: fills space if image is smaller */
 }
+/* Target all tables inside .accordion-body */
+.accordion-body table {
+  background-color: var(--turf-dark); /* dark row background */
+  color: white;
+  font-size: 0.95rem;
+}
+
+/* Table headers */
+.accordion-body table thead th {
+  background-color: var(--turf-medium); /* header green */
+  color: white;
+  font-size: 1rem;
+}
+
+
+
+
+
 /* FOOTER */
 footer {
   flex-shrink: 0;
@@ -292,5 +310,19 @@ footer .social-icons a:hover {
   .hero-section {
     min-height: calc(100dvh - 56px - 80px);
     background-position: center top;
+  }
+}
+/* Responsive font sizing */
+@media (max-width: 576px) {
+  .accordion-body table thead th,
+  .accordion-body table tbody td {
+    font-size: 0.75rem;
+    padding: 0.4rem;
+  }
+}
+@media (max-width: 576px) {
+  .accordion-body h5 {
+    font-size: 1rem; /* Default h5 is ~1.25rem */
+    margin-top: 0.5rem;
   }
 }
