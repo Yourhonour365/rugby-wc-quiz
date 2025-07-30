@@ -226,21 +226,6 @@ border-radius: 0 !important;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* FEEDBACK PAGE */
 .feedback-section {
   padding-bottom: calc(4rem + env(safe-area-inset-bottom));
@@ -255,6 +240,18 @@ form textarea,
 form select,
 form button {
   border-radius: 0 !important;
+}
+
+.form-control,
+.form-select {
+background-color: #164A1A !important; 
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #ccc !important; /* Light grey */
+  opacity: 1 !important;  /* Ensures full visibility */
 }
 
 /* FOOTER */
