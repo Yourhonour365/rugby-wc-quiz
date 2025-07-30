@@ -1,5 +1,4 @@
 
-<script>
   document.addEventListener('DOMContentLoaded', function () {
     const accordion = document.getElementById('knowledgeAccordion');
 
@@ -10,4 +9,4 @@
       }
     });
   });
-</script>
+
