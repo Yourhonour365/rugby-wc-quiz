@@ -136,7 +136,7 @@ main {
 /* ACCORDIONS */
 
 .accordion-body {
-background-color: var(--southafrica-green);
+background-color: #003322;
 
 }
 
@@ -188,7 +188,7 @@ border-radius: 0 !important;
  
 }
 .south-africa {
-background-color: var(--south-africa-green) !important;
+background-color: var(--southafrica-green) !important;
 border-radius: 0 !important;  
 }
 .france {
@@ -224,8 +224,6 @@ border-radius: 0 !important;
 background-color: var(--wales-red) !important;
 border-radius: 0 !important;  
 }
-
-
 
 
 
