@@ -272,9 +272,17 @@ select::placeholder {
   font-size: 1rem;
 }
 
+.table td:last-child,
+.table th:last-child {
+  text-align: center;
+}
 
-
-
+/* Force all tables to use equal column widths */
+.results-tables table,
+.records-tables table {
+  table-layout: fixed;
+  width: 100%;
+}
 
 /* FOOTER */
 footer {

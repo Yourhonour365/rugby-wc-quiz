@@ -2,1012 +2,1096 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>RWC Quiz Battle</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/images/favicon-16x16.png"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body class="d-flex flex-column min-vh-100">
-    <nav
-      class="navbar navbar-expand-lg navbar-dark"
-      style="background-color: #164a1a"
-    >
-      <div class="container-fluid">
-        <a
-          class="navbar-brand d-flex align-items-center"
-          href="index.html"
-          aria-label="Home"
-        >
-          <i class="fa-solid fa-trophy"></i>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="play.html">Play</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="stats-legends.html"
-                >Knowledge Zone</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="feedback.html">Feedback</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<title>RWC Quiz Battle</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #164a1a">
+			<div class="container-fluid">
+				<a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Home">
+					<i class="fa-solid fa-trophy"></i>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="play.html">Play</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="stats-legends.html">Knowledge Zone</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="feedback.html">Feedback</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-    <main class="flex-grow-1 d-flex flex-column">
-      <!--SECTION CONTAINER FOR ACCORDIONS-->
-      <section class="container py-5">
-        <h2 class="text-center mb-4">Knowledge Zone</h2>
+		<main class="flex-grow-1 d-flex flex-column">
+			<!--SECTION CONTAINER FOR ACCORDIONS-->
+			<section class="container py-5">
+				<h2 class="text-center mb-4">Knowledge Zone</h2>
 
-        <!-- MAIN Accordion -->
-        <div class="accordion" id="knowledgeAccordion">
-          <!-- Teams -->
-          <div class="accordion-item bg-dark text-white border-light">
-            <h2 class="accordion-header" id="headingTeams">
-              <button
-                id="teams-button"
-                class="accordion-button collapsed bg-dark text-white"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTeams"
-                aria-expanded="false"
-                aria-controls="collapseTeams"
-              >
-                Teams
-              </button>
-            </h2>
+				<!-- MAIN Accordion -->
+				<div class="accordion" id="knowledgeAccordion">
+					<!-- Teams -->
+					<div class="accordion-item bg-dark text-white border-light">
+						<h2 class="accordion-header" id="headingTeams">
+							<button id="teams-button" class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTeams" aria-expanded="false" aria-controls="collapseTeams">
+								Teams
+							</button>
+						</h2>
 
-            <div
-              id="collapseTeams"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingTeams"
-              data-bs-parent="#knowledgeAccordion"
-            >
-              <div class="accordion-body">
-                <!-- Teams Section inside accordion-body -->
-                <div class="container ps-4">
-                  <!-- New Zealand Block -->
-                  <div
-                    class="bg-secondary text-white p-3 mb-3 rounded new-zealand"
-                  >
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/07-logo-newzealand.jpg"
-                        alt="New Zealand Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">New Zealand (All Blacks)</h5>
-                    </div>
-                    <p class="mb-2">
-                      Famous for the haka and three-time World Cup winners.
-                      Known for speed, flair, and dominance.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 64<br />
-                        <strong>Games Won:</strong> 54<br />
-                        <strong>Games Lost:</strong> 9<br />
-                        <strong>Games Drawn:</strong> 1<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 84%<br />
-                        <strong>Game Lose Rate:</strong> 14%<br />
-                        <strong>Points For:</strong> 2,888<br />
-                        <strong>Points Against:</strong> 842<br />
-                        <strong>Points Diff':</strong> 2,046<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> 5<br />
-                        <strong>Final Won:</strong> 3<br />
-                        <strong>Final Lost:</strong> 2<br />
-                        <strong>Final Win Rate:</strong> 60%<br />
-                        <strong>RWC Red Cards:</strong> 2<br />
-                      </div>
-                    </div>
-                  </div>
+						<div id="collapseTeams" class="accordion-collapse collapse" aria-labelledby="headingTeams" data-bs-parent="#knowledgeAccordion">
+							<div class="accordion-body">
+								<!-- Teams Section inside accordion-body -->
+								<div class="container ps-4">
+									<!-- New Zealand Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded new-zealand">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/07-logo-newzealand.jpg" alt="New Zealand Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">New Zealand (All Blacks)</h5>
+										</div>
+										<p class="mb-2">
+											Famous for the haka and three-time World Cup winners. Known for speed, flair, and dominance.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 64<br />
+												<strong>Games Won:</strong> 54<br />
+												<strong>Games Lost:</strong> 9<br />
+												<strong>Games Drawn:</strong> 1<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 84%<br />
+												<strong>Game Lose Rate:</strong> 14%<br />
+												<strong>Points For:</strong> 2,888<br />
+												<strong>Points Against:</strong> 842<br />
+												<strong>Points Diff':</strong> 2,046<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> 5<br />
+												<strong>Final Won:</strong> 3<br />
+												<strong>Final Lost:</strong> 2<br />
+												<strong>Final Win Rate:</strong> 60%<br />
+												<strong>RWC Red Cards:</strong> 2<br />
+											</div>
+										</div>
+									</div>
 
-                  <!-- South Africa Block -->
-                  <div
-                    class="bg-secondary text-white p-3 mb-3 rounded south-africa"
-                  >
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/091-logo-south-africa.png"
-                        alt="South Africa Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">South Africa (Springboks)</h5>
-                    </div>
-                    <p class="mb-2">
-                      Powerhouse of world rugby. Physical, strategic,
-                      relentless.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 8<br />
-                        <strong>Games Played:</strong> 50<br />
-                        <strong>Games Won:</strong> 42<br />
-                        <strong>Games Lost:</strong> 8<br />
-                        <strong>Games Drawn:</strong> 0<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 84%<br />
-                        <strong>Game Lose Rate:</strong> 16%<br />
-                        <strong>Points For:</strong> 1,720<br />
-                        <strong>Points Against:</strong> 641<br />
-                        <strong>Points Diff':</strong> 1,079<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> 4<br />
-                        <strong>Final Won:</strong> 4<br />
-                        <strong>Final Lost:</strong> 0<br />
-                        <strong>Final Win Rate:</strong> 100%<br />
-                        <strong>RWC Red Cards:</strong> 2<br />
-                      </div>
-                    </div>
-                  </div>
+									<!-- South Africa Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded south-africa">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/091-logo-south-africa.png" alt="South Africa Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">South Africa (Springboks)</h5>
+										</div>
+										<p class="mb-2">
+											Powerhouse of world rugby. Physical, strategic, relentless.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 8<br />
+												<strong>Games Played:</strong> 50<br />
+												<strong>Games Won:</strong> 42<br />
+												<strong>Games Lost:</strong> 8<br />
+												<strong>Games Drawn:</strong> 0<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 84%<br />
+												<strong>Game Lose Rate:</strong> 16%<br />
+												<strong>Points For:</strong> 1,720<br />
+												<strong>Points Against:</strong> 641<br />
+												<strong>Points Diff':</strong> 1,079<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> 4<br />
+												<strong>Final Won:</strong> 4<br />
+												<strong>Final Lost:</strong> 0<br />
+												<strong>Final Win Rate:</strong> 100%<br />
+												<strong>RWC Red Cards:</strong> 2<br />
+											</div>
+										</div>
+									</div>
 
-                  <!-- France Block -->
-                  <div class="bg-secondary text-white p-3 mb-3 rounded france">
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/041-logo-france.png"
-                        alt="France Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">France (Les Bleus)</h5>
-                    </div>
-                    <p class="mb-2">
-                      Stylish, unpredictable, and hosts of the 2023 Rugby World
-                      Cup. Runners-up three times.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 58<br />
-                        <strong>Games Won:</strong> 40<br />
-                        <strong>Games Lost:</strong> 16<br />
-                        <strong>Games Drawn:</strong> 2<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 69%<br />
-                        <strong>Game Lose Rate:</strong> 28%<br />
-                        <strong>Points For:</strong> 1,823<br />
-                        <strong>Points Against:</strong> 1,027<br />
-                        <strong>Points Diff':</strong> 796<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> 3<br />
-                        <strong>Final Won:</strong> 0<br />
-                        <strong>Final Lost:</strong> 3<br />
-                        <strong>Final Win Rate:</strong> 0%<br />
-                        <strong>RWC Red Cards:</strong> 1<br />
-                      </div>
-                    </div>
-                  </div>
+									<!-- France Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded france">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/041-logo-france.png" alt="France Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">France (Les Bleus)</h5>
+										</div>
+										<p class="mb-2">
+											Stylish, unpredictable, and hosts of the 2023 Rugby World Cup. Runners-up three times.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 58<br />
+												<strong>Games Won:</strong> 40<br />
+												<strong>Games Lost:</strong> 16<br />
+												<strong>Games Drawn:</strong> 2<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 69%<br />
+												<strong>Game Lose Rate:</strong> 28%<br />
+												<strong>Points For:</strong> 1,823<br />
+												<strong>Points Against:</strong> 1,027<br />
+												<strong>Points Diff':</strong> 796<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> 3<br />
+												<strong>Final Won:</strong> 0<br />
+												<strong>Final Lost:</strong> 3<br />
+												<strong>Final Win Rate:</strong> 0%<br />
+												<strong>RWC Red Cards:</strong> 1<br />
+											</div>
+										</div>
+									</div>
 
-                  <!--Argentina Block -->
-                  <div
-                    class="bg-secondary text-white p-3 mb-3 rounded Argentina"
-                  >
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/00-argentina.webp"
-                        alt="France Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">Argentina (The Pumas)</h5>
-                    </div>
-                    <p class="mb-2">
-                      Fearless, passionate, and physical competitors known for
-                      upsetting top-tier nations with their relentless defence
-                      and counter-attacking flair.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 48<br />
-                        <strong>Games Won:</strong> 25<br />
-                        <strong>Games Lost:</strong> 23<br />
-                        <strong>Games Drawn:</strong> 1<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 52%<br />
-                        <strong>Game Lose Rate:</strong> 48%<br />
-                        <strong>Points For:</strong> 1,283<br />
-                        <strong>Points Against:</strong> 995<br />
-                        <strong>Points Diff':</strong> 288<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> -<br />
-                        <strong>Final Won:</strong> -<br />
-                        <strong>Final Lost:</strong> -<br />
-                        <strong>Final Win Rate:</strong> -<br />
-                        <strong>RWC Red Cards:</strong> 2<br />
-                      </div>
-                    </div>
-                  </div>
+									<!--Argentina Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded Argentina">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/00-argentina.webp" alt="France Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">Argentina (The Pumas)</h5>
+										</div>
+										<p class="mb-2">
+											Fearless, passionate, and physical competitors known for upsetting top-tier nations with their relentless defence and counter-attacking flair.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 48<br />
+												<strong>Games Won:</strong> 25<br />
+												<strong>Games Lost:</strong> 23<br />
+												<strong>Games Drawn:</strong> 1<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 52%<br />
+												<strong>Game Lose Rate:</strong> 48%<br />
+												<strong>Points For:</strong> 1,283<br />
+												<strong>Points Against:</strong> 995<br />
+												<strong>Points Diff':</strong> 288<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> -<br />
+												<strong>Final Won:</strong> -<br />
+												<strong>Final Lost:</strong> -<br />
+												<strong>Final Win Rate:</strong> -<br />
+												<strong>RWC Red Cards:</strong> 2<br />
+											</div>
+										</div>
+									</div>
 
-                  <!-- Australia Block -->
-                  <div
-                    class="bg-secondary text-white p-3 mb-3 rounded Australia"
-                  >
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/00-australia.webp"
-                        alt="France Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">Australia (The Wallabies)</h5>
-                    </div>
-                    <p class="mb-2">
-                      Renowned for their attacking flair, creativity, and two
-                      World Cup triumphs in 1991 and 1999.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 57<br />
-                        <strong>Games Won:</strong> 44<br />
-                        <strong>Games Lost:</strong> 13<br />
-                        <strong>Games Drawn:</strong> 0<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 77%<br />
-                        <strong>Game Lose Rate:</strong> 23%<br />
-                        <strong>Points For:</strong> 1,887<br />
-                        <strong>Points Against:</strong> 845<br />
-                        <strong>Points Diff':</strong> 1,042<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> 4<br />
-                        <strong>Final Won:</strong> 2<br />
-                        <strong>Final Lost:</strong> 2<br />
-                        <strong>Final Win Rate:</strong> 50%<br />
-                        <strong>RWC Red Cards:</strong> 1<br />
-                      </div>
-                    </div>
-                  </div>
+									<!-- Australia Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded Australia">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/00-australia.webp" alt="France Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">Australia (The Wallabies)</h5>
+										</div>
+										<p class="mb-2">
+											Renowned for their attacking flair, creativity, and two World Cup triumphs in 1991 and 1999.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 57<br />
+												<strong>Games Won:</strong> 44<br />
+												<strong>Games Lost:</strong> 13<br />
+												<strong>Games Drawn:</strong> 0<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 77%<br />
+												<strong>Game Lose Rate:</strong> 23%<br />
+												<strong>Points For:</strong> 1,887<br />
+												<strong>Points Against:</strong> 845<br />
+												<strong>Points Diff':</strong> 1,042<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> 4<br />
+												<strong>Final Won:</strong> 2<br />
+												<strong>Final Lost:</strong> 2<br />
+												<strong>Final Win Rate:</strong> 50%<br />
+												<strong>RWC Red Cards:</strong> 1<br />
+											</div>
+										</div>
+									</div>
 
-                  <!-- England Block -->
-                  <div class="bg-secondary text-white p-3 mb-3 rounded England">
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/00-england.webp"
-                        alt="France Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">England (Three Lions)</h5>
-                    </div>
-                    <p class="mb-2">
-                      Known for their powerful forwards and tactical precision,
-                      are consistent contenders with a strong set-piece game and
-                      a historic World Cup win in 2003.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 58<br />
-                        <strong>Games Won:</strong> 42<br />
-                        <strong>Games Lost:</strong> 15<br />
-                        <strong>Games Drawn:</strong> 1<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 72%<br />
-                        <strong>Game Lose Rate:</strong> 26%<br />
-                        <strong>Points For:</strong> 1,790<br />
-                        <strong>Points Against:</strong> 885<br />
-                        <strong>Points Diff':</strong> 905<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> 4<br />
-                        <strong>Final Won:</strong> 1<br />
-                        <strong>Final Lost:</strong> 3<br />
-                        <strong>Final Win Rate:</strong> 25%<br />
-                        <strong>RWC Red Cards:</strong> 1<br />
-                      </div>
-                    </div>
-                  </div>
+									<!-- England Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded England">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/00-england.webp" alt="France Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">England (Three Lions)</h5>
+										</div>
+										<p class="mb-2">
+											Known for their powerful forwards and tactical precision, are consistent contenders with a strong set-piece game and a historic World Cup win in 2003.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 58<br />
+												<strong>Games Won:</strong> 42<br />
+												<strong>Games Lost:</strong> 15<br />
+												<strong>Games Drawn:</strong> 1<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 72%<br />
+												<strong>Game Lose Rate:</strong> 26%<br />
+												<strong>Points For:</strong> 1,790<br />
+												<strong>Points Against:</strong> 885<br />
+												<strong>Points Diff':</strong> 905<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> 4<br />
+												<strong>Final Won:</strong> 1<br />
+												<strong>Final Lost:</strong> 3<br />
+												<strong>Final Win Rate:</strong> 25%<br />
+												<strong>RWC Red Cards:</strong> 1<br />
+											</div>
+										</div>
+									</div>
 
-                  <!-- Ireland Block -->
-                  <div class="bg-secondary text-white p-3 mb-3 rounded Ireland">
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/00-ireland.webp"
-                        alt="France Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">Ireland</h5>
-                    </div>
-                    <p class="mb-2">
-                      Known for tactical brilliance, passionate play, and recent
-                      dominance, including Grand Slam victories and a world No.
-                      1 ranking.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 45<br />
-                        <strong>Games Won:</strong> 28<br />
-                        <strong>Games Lost:</strong> 17<br />
-                        <strong>Games Drawn:</strong> 0<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 62%<br />
-                        <strong>Game Lose Rate:</strong> 38%<br />
-                        <strong>Points For:</strong> 1,322<br />
-                        <strong>Points Against:</strong> 809<br />
-                        <strong>Points Diff':</strong> 513<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> -<br />
-                        <strong>Final Won:</strong> -<br />
-                        <strong>Final Lost:</strong> -<br />
-                        <strong>Final Win Rate:</strong> -<br />
-                        <strong>RWC Red Cards:</strong> 1<br />
-                      </div>
-                    </div>
-                  </div>
+									<!-- Ireland Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded Ireland">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/00-ireland.webp" alt="France Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">Ireland</h5>
+										</div>
+										<p class="mb-2">
+											Known for tactical brilliance, passionate play, and recent dominance, including Grand Slam victories and a world No. 1 ranking.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 45<br />
+												<strong>Games Won:</strong> 28<br />
+												<strong>Games Lost:</strong> 17<br />
+												<strong>Games Drawn:</strong> 0<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 62%<br />
+												<strong>Game Lose Rate:</strong> 38%<br />
+												<strong>Points For:</strong> 1,322<br />
+												<strong>Points Against:</strong> 809<br />
+												<strong>Points Diff':</strong> 513<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> -<br />
+												<strong>Final Won:</strong> -<br />
+												<strong>Final Lost:</strong> -<br />
+												<strong>Final Win Rate:</strong> -<br />
+												<strong>RWC Red Cards:</strong> 1<br />
+											</div>
+										</div>
+									</div>
 
-                  <!-- Italy Block -->
-                  <div class="bg-secondary text-white p-3 mb-3 rounded Italy">
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/00-italy.webp"
-                        alt="France Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">Italy (The Azzurri)</h5>
-                    </div>
-                    <p class="mb-2">
-                      Spirited underdog, known for resilience and flair,
-                      steadily improving within the fiercely competitive
-                      international arena.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 36<br />
-                        <strong>Games Won:</strong> 15<br />
-                        <strong>Games Lost:</strong> 20<br />
-                        <strong>Games Drawn:</strong> 1<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 42%<br />
-                        <strong>Game Lose Rate:</strong> 56%<br />
-                        <strong>Points For:</strong> 741<br />
-                        <strong>Points Against:</strong> 1,158<br />
-                        <strong>Points Diff':</strong> -417<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> -<br />
-                        <strong>Final Won:</strong> -<br />
-                        <strong>Final Lost:</strong> -<br />
-                        <strong>Final Win Rate:</strong> -<br />
-                        <strong>RWC Red Cards:</strong> 1<br />
-                      </div>
-                    </div>
-                  </div>
+									<!-- Italy Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded Italy">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/00-italy.webp" alt="France Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">Italy (The Azzurri)</h5>
+										</div>
+										<p class="mb-2">
+											Spirited underdog, known for resilience and flair, steadily improving within the fiercely competitive international arena.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 36<br />
+												<strong>Games Won:</strong> 15<br />
+												<strong>Games Lost:</strong> 20<br />
+												<strong>Games Drawn:</strong> 1<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 42%<br />
+												<strong>Game Lose Rate:</strong> 56%<br />
+												<strong>Points For:</strong> 741<br />
+												<strong>Points Against:</strong> 1,158<br />
+												<strong>Points Diff':</strong> -417<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> -<br />
+												<strong>Final Won:</strong> -<br />
+												<strong>Final Lost:</strong> -<br />
+												<strong>Final Win Rate:</strong> -<br />
+												<strong>RWC Red Cards:</strong> 1<br />
+											</div>
+										</div>
+									</div>
 
-                  <!-- Scotland Block -->
-                  <div
-                    class="bg-secondary text-white p-3 mb-3 rounded Scotland"
-                  >
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/00-scotland.webp"
-                        alt="France Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">Scotland (The Thistles)</h5>
-                    </div>
-                    <p class="mb-2">
-                      True grit and creativity, with a proud history and a
-                      reputation for passionate performances and upset
-                      victories.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 46<br />
-                        <strong>Games Won:</strong> 26<br />
-                        <strong>Games Lost:</strong> 19<br />
-                        <strong>Games Drawn:</strong> 1<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 57%<br />
-                        <strong>Game Lose Rate:</strong> 41%<br />
-                        <strong>Points For:</strong> 1,407<br />
-                        <strong>Points Against:</strong> 874<br />
-                        <strong>Points Diff':</strong> 533<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> -<br />
-                        <strong>Final Won:</strong> -<br />
-                        <strong>Final Lost:</strong> -<br />
-                        <strong>Final Win Rate:</strong> -<br />
-                        <strong>RWC Red Cards:</strong> 0<br />
-                      </div>
-                    </div>
-                  </div>
+									<!-- Scotland Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded Scotland">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/00-scotland.webp" alt="France Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">Scotland (The Thistles)</h5>
+										</div>
+										<p class="mb-2">
+											True grit and creativity, with a proud history and a reputation for passionate performances and upset victories.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 46<br />
+												<strong>Games Won:</strong> 26<br />
+												<strong>Games Lost:</strong> 19<br />
+												<strong>Games Drawn:</strong> 1<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 57%<br />
+												<strong>Game Lose Rate:</strong> 41%<br />
+												<strong>Points For:</strong> 1,407<br />
+												<strong>Points Against:</strong> 874<br />
+												<strong>Points Diff':</strong> 533<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> -<br />
+												<strong>Final Won:</strong> -<br />
+												<strong>Final Lost:</strong> -<br />
+												<strong>Final Win Rate:</strong> -<br />
+												<strong>RWC Red Cards:</strong> 0<br />
+											</div>
+										</div>
+									</div>
 
-                  <!-- Wales Block -->
-                  <div class="bg-secondary text-white p-3 mb-3 rounded Wales">
-                    <div class="d-flex align-items-center mb-2">
-                      <img
-                        src="assets/images/00-wales.webp"
-                        alt="France Logo"
-                        style="height: 40px; max-width: 100%; flex-shrink: 0"
-                        class="me-3 img-fluid"
-                      />
-                      <h5 class="mb-0">Wales (The Dragons)</h5>
-                    </div>
-                    <p class="mb-2">
-                      Known for passionate fans, rich heritage, and flair-driven
-                      play.
-                    </p>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>World Cups Attended:</strong> 10<br />
-                        <strong>Games Played:</strong> 49<br />
-                        <strong>Games Won:</strong> 30<br />
-                        <strong>Games Lost:</strong> 19<br />
-                        <strong>Games Drawn:</strong> 0<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Game Win Rate:</strong> 61%<br />
-                        <strong>Game Lose Rate:</strong> 39%<br />
-                        <strong>Points For:</strong> 1,398<br />
-                        <strong>Points Against:</strong> 953<br />
-                        <strong>Points Diff':</strong> 445<br />
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Final Played:</strong> -<br />
-                        <strong>Final Won:</strong> -<br />
-                        <strong>Final Lost:</strong> -<br />
-                        <strong>Final Win Rate:</strong> -<br />
-                        <strong>RWC Red Cards:</strong> 2<br />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+									<!-- Wales Block -->
+									<div class="bg-secondary text-white p-3 mb-3 rounded Wales">
+										<div class="d-flex align-items-center mb-2">
+											<img src="assets/images/00-wales.webp" alt="France Logo" style="height: 40px; max-width: 100%; flex-shrink: 0" class="me-3 img-fluid" />
+											<h5 class="mb-0">Wales (The Dragons)</h5>
+										</div>
+										<p class="mb-2">
+											Known for passionate fans, rich heritage, and flair-driven play.
+										</p>
+										<div class="row">
+											<div class="col-md-4">
+												<strong>World Cups Attended:</strong> 10<br />
+												<strong>Games Played:</strong> 49<br />
+												<strong>Games Won:</strong> 30<br />
+												<strong>Games Lost:</strong> 19<br />
+												<strong>Games Drawn:</strong> 0<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Game Win Rate:</strong> 61%<br />
+												<strong>Game Lose Rate:</strong> 39%<br />
+												<strong>Points For:</strong> 1,398<br />
+												<strong>Points Against:</strong> 953<br />
+												<strong>Points Diff':</strong> 445<br />
+											</div>
+											<div class="col-md-4">
+												<strong>Final Played:</strong> -<br />
+												<strong>Final Won:</strong> -<br />
+												<strong>Final Lost:</strong> -<br />
+												<strong>Final Win Rate:</strong> -<br />
+												<strong>RWC Red Cards:</strong> 2<br />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Legends -->
+
+					<div class="accordion-item bg-dark text-white border-light">
+						<h2 class="accordion-header" id="headingLegends">
+							<button id="legends-button" class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLegends" aria-expanded="false" aria-controls="collapseLegends">
+								Legends
+							</button>
+						</h2>
+						<div id="collapseLegends" class="accordion-collapse collapse" aria-labelledby="headingLegends" data-bs-parent="#knowledgeAccordion">
+							<div class="accordion-body">
+								<div class="container ps-4">
+									<div class="row justify-content-center g-4">
+										<div class="col-md-6 col-lg-4">
+											<div class="card bg-dark text-white border-light h-100 rounded-0">
+												<img src="assets/images/44-johanlomu.webp" class="card-img-top" alt="Jonah Lomu" />
+												<div class="card-body">
+													<h5 class="card-title">Jonah Lomu</h5>
+													<p class="card-text">
+														Changed rugby forever with pace, power, and presence. Icon of the 1995 RWC.
+													</p>
+												</div>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item bg-dark text-white">
+														11 Tournament Matches
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														15 Tournament Tries
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Joint Record For Most Tries In A Single Tournament (8)
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Holds All Time RWC Record For Most Defenders Beaten (97)
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-4">
+											<div class="card bg-dark text-white border-light h-100 rounded-0">
+												<img src="assets/images/41-richiemccaw.webp" class="card-img-top" alt="Jonah Lomu" />
+												<div class="card-body">
+													<h5 class="card-title">Ritchie McCaw</h5>
+													<p class="card-text">
+														Captained New Zealand to two World Cups (2011,2015) and was awarded World Rugby player of the decade (2011–2020) in 2021.
+													</p>
+												</div>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item bg-dark text-white">
+														Appearances 22
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Wins 20
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Tries scored 5
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-4">
+											<div class="card bg-dark text-white border-light h-100 rounded-0">
+												<img src="assets/images/49-johnny-wilkinson.webp" class="card-img-top" alt="Jonah Lomu" />
+												<div class="card-body">
+													<h5 class="card-title">Johnny Wilkinson</h5>
+													<p class="card-text">
+														He is the all-time leading points scorer in Rugby World Cup history with 277 points.
+													</p>
+												</div>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item bg-dark text-white">
+														Record for most RWC penalties (58)
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Record for most RWC drop goals (14)
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Record for most drop goals in single tournament (8), 2003
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-4">
+											<div class="card bg-dark text-white border-light h-100 rounded-0">
+												<img src="assets/images/499-dan-carter.webp" class="card-img-top" alt="Jonah Lomu" />
+												<div class="card-body">
+													<h5 class="card-title">Dan Carter</h5>
+													<p class="card-text">
+														Dan Carter holds the record for the most conversions in Rugby World Cup matches (58) and won the Rugby World Cup twice (2011, 2015)
+													</p>
+												</div>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item bg-dark text-white">
+														Appearances 22
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Wins 20
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Tries scored 5
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-4">
+											<div class="card bg-dark text-white border-light h-100 rounded-0">
+												<img src="assets/images/499-brian-habana.webp" class="card-img-top" alt="Jonah Lomu" />
+												<div class="card-body">
+													<h5 class="card-title">Bryan Habana</h5>
+													<p class="card-text">
+														Joint record holder for most tries in a single Rugby World Cup (8) and of all time (15).
+													</p>
+												</div>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item bg-dark text-white">
+														Appearances 20
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														World Cups 2007,2011,2015
+													</li>
+													<li class="list-group-item bg-dark text-white">
+														Tries scored 15
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+
+				   <!-- Records -->
+				  <div class="accordion-item bg-dark text-white border-light">
+					  <h2 class="accordion-header" id="headingRecords">
+						  <button id="records-button" class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRecords" aria-expanded="false" aria-controls="collapseRecords">
+							 Player Records
+						  </button>
+					  </h2>
+					  <div id="collapseRecords" class="accordion-collapse collapse" aria-labelledby="headingRecords" data-bs-parent="#knowledgeAccordion">
+						<div class="accordion-body records-tables">
+							<h5 class="mt-4">Most RWC points</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Points</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Jonny Wilkinson</td>
+											<td>England</td>
+											<td>277</td>
+										</tr>
+										<tr>
+											<td>Gavin Hastings</td>
+											<td>Scotland</td>
+											<td>227</td>
+										</tr>
+										<tr>
+											<td>Handré Pollard</td>
+											<td>South Africa</td>
+											<td>195</td>
+										</tr>
+										<tr>
+											<td>Michael Lynagh</td>
+											<td>Australia</td>
+											<td>195</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<h5 class="mt-4">Most points in one tournament</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Points</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Grant Fox</td>
+											<td>New Zealand</td>
+											<td>126</td>
+										</tr>
+										<tr>
+											<td>Jonny Wilkinson</td>
+											<td>England</td>
+											<td>113</td>
+										</tr>
+										<tr>
+											<td>Thierry Lacroix</td>
+											<td>France</td>
+											<td>112</td>
+										</tr>
+										<tr>
+											<td>Percy Montgomery</td>
+											<td>South Africa</td>
+											<td>105</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<h5 class="mt-4">Most points in a match</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Points</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Simon Culhane</td>
+											<td>New Zealand</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>Gavin Hastings</td>
+											<td>Scotland</td>
+											<td>44</td>
+										</tr>
+										<tr>
+											<td>Mat Rogers</td>
+											<td>Australia</td>
+											<td>42</td>
+										</tr>
+										<tr>
+											<td>Tony Brown</td>
+											<td>New Zealand</td>
+											<td>36</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<h5 class="mt-4">Most RWC tries</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Tries</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Jonah Lomu (tied)</td>
+											<td>New Zealand</td>
+											<td>15</td>
+										</tr>
+										<tr>
+											<td>Bryan Habana (tied)</td>
+											<td>South Africa</td>
+											<td>15</td>
+										</tr>
+										<tr>
+											<td>Drew Mitchell</td>
+											<td>Australia</td>
+											<td>14</td>
+										</tr>
+										<tr>
+											<td>Doug Howlett</td>
+											<td>New Zealand</td>
+											<td>13</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<h5 class="mt-4">Most tries in one tournament</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Tries</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Jonah Lomu (tied)</td>
+											<td>New Zealand</td>
+											<td>8</td>
+										</tr>
+										<tr>
+											<td>Bryan Habana (tied)</td>
+											<td>South Africa</td>
+											<td>8</td>
+										</tr>
+										<tr>
+											<td>Julian Savea</td>
+											<td>New Zealand</td>
+											<td>8</td>
+										</tr>
+										<tr>
+											<td>Will Jordan</td>
+											<td>New Zealand</td>
+											<td>8</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h5 class="mt-4">Most tries in a match</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Tries</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Marc Ellis</td>
+											<td>New Zealand</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>Chris Latham</td>
+											<td>Australia</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Josh Lewsey</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Henry Arundell</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h5 class="mt-4">Youngest try scorer in a World Cup game</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Age</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>George North</td>
+											<td>Wales</td>
+											<td>19 years, 166 days</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h5 class="mt-4">Oldest try scorer in a World Cup game</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Age</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Diego Ormaechea</td>
+											<td>Uruguay</td>
+											<td>40 years, 13 days</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h5 class="mt-4">Most tries in a match</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Tries</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Marc Ellis</td>
+											<td>New Zealand</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>Chris Latham</td>
+											<td>Australia</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Josh Lewsey</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Henry Arundell</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h5 class="mt-4">Most tries in a match</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Tries</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Marc Ellis</td>
+											<td>New Zealand</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>Chris Latham</td>
+											<td>Australia</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Josh Lewsey</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Henry Arundell</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h5 class="mt-4">Most tries in a match</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Tries</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Marc Ellis</td>
+											<td>New Zealand</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>Chris Latham</td>
+											<td>Australia</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Josh Lewsey</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Henry Arundell</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h5 class="mt-4">Most tries in a match</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Tries</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Marc Ellis</td>
+											<td>New Zealand</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>Chris Latham</td>
+											<td>Australia</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Josh Lewsey</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Henry Arundell</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h5 class="mt-4">Most tries in a match</h5>
+							<div class="table-responsive">
+								<table class="table table-dark table-striped table-bordered mb-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Team</th>
+											<th>Tries</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Marc Ellis</td>
+											<td>New Zealand</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>Chris Latham</td>
+											<td>Australia</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Josh Lewsey</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>Henry Arundell</td>
+											<td>England</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					  </div>
           </div>
+					
+					 <!-- Results -->
+					<div class="accordion-item bg-dark text-white border-light">
+						<h2 class="accordion-header" id="headingResults">
+							<button id="results-button" class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResults" aria-expanded="false" aria-controls="collapseResults">
+								Team Records
+							</button>
+						</h2>
+						<div id="collapseResults" class="accordion-collapse collapse" aria-labelledby="headingResults" data-bs-parent="#knowledgeAccordion">
+							<div class="accordion-body results-tables">
+								<h5 class="mt-4">1987 – New Zealand & Australia</h5>
+								<div class="table-responsive">
+									<table class="table table-dark table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Winner</th>
+												<th>Runner-Up</th>
+												<th>Score</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>New Zealand</td>
+												<td>France</td>
+												<td>29–9</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 
-          <!-- Legends -->
+								<h5 class="mt-4">1995 – South Africa</h5>
+								<div class="table-responsive">
+									<table class="table table-dark table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Winner</th>
+												<th>Runner-Up</th>
+												<th>Score</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>South Africa</td>
+												<td>New Zealand</td>
+												<td>15–12 (ET)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 
-          <div class="accordion-item bg-dark text-white border-light">
-            <h2 class="accordion-header" id="headingLegends">
-              <button
-                id="legends-button"
-                class="accordion-button collapsed bg-dark text-white"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseLegends"
-                aria-expanded="false"
-                aria-controls="collapseLegends"
-              >
-                Legends
-              </button>
-            </h2>
-            <div
-              id="collapseLegends"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingLegends"
-              data-bs-parent="#knowledgeAccordion"
-            >
-              <div class="accordion-body">
-                <div class="container ps-4">
-                  <div class="row justify-content-center g-4">
-                    <div class="col-md-6 col-lg-4">
-                      <div
-                        class="card bg-dark text-white border-light h-100 rounded-0"
-                      >
-                        <img
-                          src="assets/images/44-johanlomu.webp"
-                          class="card-img-top"
-                          alt="Jonah Lomu"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title">Jonah Lomu</h5>
-                          <p class="card-text">
-                            Changed rugby forever with pace, power, and
-                            presence. Icon of the 1995 RWC.
-                          </p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item bg-dark text-white">
-                            11 Tournament Matches
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            15 Tournament Tries
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Joint Record For Most Tries In A Single Tournament
-                            (8)
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Holds All Time RWC Record For Most Defenders Beaten
-                            (97)
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                      <div
-                        class="card bg-dark text-white border-light h-100 rounded-0"
-                      >
-                        <img
-                          src="assets/images/41-richiemccaw.webp"
-                          class="card-img-top"
-                          alt="Jonah Lomu"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title">Ritchie McCaw</h5>
-                          <p class="card-text">
-                            Captained New Zealand to two World Cups (2011,2015)
-                            and was awarded World Rugby player of the decade
-                            (2011–2020) in 2021.
-                          </p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item bg-dark text-white">
-                            Appearances 22
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Wins 20
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Tries scored 5
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                      <div
-                        class="card bg-dark text-white border-light h-100 rounded-0"
-                      >
-                        <img
-                          src="assets/images/49-johnny-wilkinson.webp"
-                          class="card-img-top"
-                          alt="Jonah Lomu"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title">Johnny Wilkinson</h5>
-                          <p class="card-text">
-                            He is the all-time leading points scorer in Rugby
-                            World Cup history with 277 points.
-                          </p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item bg-dark text-white">
-                            Record for most RWC penalties (58)
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Record for most RWC drop goals (14)
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Record for most drop goals in single tournament (8),
-                            2003
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                      <div
-                        class="card bg-dark text-white border-light h-100 rounded-0"
-                      >
-                        <img
-                          src="assets/images/499-dan-carter.webp"
-                          class="card-img-top"
-                          alt="Jonah Lomu"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title">Dan Carter</h5>
-                          <p class="card-text">
-                            Dan Carter holds the record for the most conversions
-                            in Rugby World Cup matches (58) and won the Rugby
-                            World Cup twice (2011, 2015)
-                          </p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item bg-dark text-white">
-                            Appearances 22
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Wins 20
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Tries scored 5
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                      <div
-                        class="card bg-dark text-white border-light h-100 rounded-0"
-                      >
-                        <img
-                          src="assets/images/499-brian-habana.webp"
-                          class="card-img-top"
-                          alt="Jonah Lomu"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title">Bryan Habana</h5>
-                          <p class="card-text">
-                            Joint record holder for most tries in a single Rugby
-                            World Cup (8) and of all time (15).
-                          </p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item bg-dark text-white">
-                            Appearances 20
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            World Cups 2007,2011,2015
-                          </li>
-                          <li class="list-group-item bg-dark text-white">
-                            Tries scored 15
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
+								<h5 class="mt-4">2003 – Australia</h5>
+								<div class="table-responsive">
+									<table class="table table-dark table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Winner</th>
+												<th>Runner-Up</th>
+												<th>Score</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>England</td>
+												<td>Australia</td>
+												<td>20–17 (ET)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 
-         
-          <!-- Records -->
-<div class="accordion-item bg-dark text-white border-light">
-  <h2 class="accordion-header" id="headingRecords">
-    <button
-      id="records-button"
-      class="accordion-button collapsed bg-dark text-white"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#collapseRecords"
-      aria-expanded="false"
-      aria-controls="collapseRecords"
-    >
-      Performance Records
-    </button>
-  </h2>
-  <div
-    id="collapseRecords"
-    class="accordion-collapse collapse"
-    aria-labelledby="headingRecords"
-    data-bs-parent="#knowledgeAccordion"
-  >
-    <div class="accordion-body records-tables">
+								<h5 class="mt-4">2019 – Japan</h5>
+								<div class="table-responsive">
+									<table class="table table-dark table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Winner</th>
+												<th>Runner-Up</th>
+												<th>Score</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>South Africa</td>
+												<td>England</td>
+												<td>32–12</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 
-      <h5 class="mt-4">1987 – New Zealand & Australia</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>New Zealand</td>
-              <td>France</td>
-              <td>29–9</td>
-            </tr>
-            <tr>
-              <td>New Zealand</td>
-              <td>France</td>
-              <td>29–9</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+								<h5 class="mt-4">2023 – France</h5>
+								<div class="table-responsive">
+									<table class="table table-dark table-striped table-bordered mb-0">
+										<thead>
+											<tr>
+												<th>Winner</th>
+												<th>Runner-Up</th>
+												<th>Score</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>South Africa</td>
+												<td>New Zealand</td>
+												<td>12–11</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--END SECTION FOR ACCORDIONS-->
+		</main>
 
-      <h5 class="mt-4">1995 – South Africa</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>South Africa</td>
-              <td>New Zealand</td>
-              <td>15–12 (ET)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+		<footer class="text-center mt-auto py-3" style="background-color: #164a1a; color: white">
+			<div class="social-icons">
+				<a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-lg mx-2"></i></a>
+				<a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-lg mx-2"></i></a>
+				<a href="https://x.com/" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter fa-lg mx-2"></i></a>
+				<a href="#" id="share-button" aria-label="Share"><i class="fa-solid fa-square-share-nodes fa-lg mx-2"></i></a>
+				<p class="mb-1 mt-1">&copy; 2025 RWC Quiz. All rights reserved.</p>
+			</div>
+		</footer>
 
-      <h5 class="mt-4">2003 – Australia</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>England</td>
-              <td>Australia</td>
-              <td>20–17 (ET)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h5 class="mt-4">2019 – Japan</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>South Africa</td>
-              <td>England</td>
-              <td>32–12</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h5 class="mt-4">2023 – France</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered mb-0">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>South Africa</td>
-              <td>New Zealand</td>
-              <td>12–11</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-          <!-- Results -->
-          <!-- Results -->
-<div class="accordion-item bg-dark text-white border-light">
-  <h2 class="accordion-header" id="headingResults">
-    <button
-      id="results-button"
-      class="accordion-button collapsed bg-dark text-white"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#collapseResults"
-      aria-expanded="false"
-      aria-controls="collapseResults"
-    >
-      Tournament Results
-    </button>
-  </h2>
-  <div
-    id="collapseResults"
-    class="accordion-collapse collapse"
-    aria-labelledby="headingResults"
-    data-bs-parent="#knowledgeAccordion"
-  >
-    <div class="accordion-body results-tables">
-
-      <h5 class="mt-4">1987 – New Zealand & Australia</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>New Zealand</td>
-              <td>France</td>
-              <td>29–9</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h5 class="mt-4">1995 – South Africa</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>South Africa</td>
-              <td>New Zealand</td>
-              <td>15–12 (ET)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h5 class="mt-4">2003 – Australia</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>England</td>
-              <td>Australia</td>
-              <td>20–17 (ET)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h5 class="mt-4">2019 – Japan</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>South Africa</td>
-              <td>England</td>
-              <td>32–12</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h5 class="mt-4">2023 – France</h5>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped table-bordered mb-0">
-          <thead>
-            <tr>
-              <th>Winner</th>
-              <th>Runner-Up</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>South Africa</td>
-              <td>New Zealand</td>
-              <td>12–11</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </div>
-</div>
-        </div>
-      </section>
-      <!--END SECTION FOR ACCORDIONS-->
-    </main>
-
-    <footer
-      class="text-center mt-auto py-3"
-      style="background-color: #164a1a; color: white"
-    >
-      <div class="social-icons">
-        <a
-          href="https://www.facebook.com/"
-          target="_blank"
-          aria-label="Facebook"
-          ><i class="fab fa-facebook fa-lg mx-2"></i
-        ></a>
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          aria-label="Instagram"
-          ><i class="fab fa-instagram fa-lg mx-2"></i
-        ></a>
-        <a href="https://x.com/" target="_blank" aria-label="X (Twitter)"
-          ><i class="fab fa-x-twitter fa-lg mx-2"></i
-        ></a>
-        <a href="#" id="share-button" aria-label="Share"
-          ><i class="fa-solid fa-square-share-nodes fa-lg mx-2"></i
-        ></a>
-        <p class="mb-1 mt-1">&copy; 2025 RWC Quiz. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
 </html>
