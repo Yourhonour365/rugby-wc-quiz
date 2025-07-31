@@ -132,43 +132,39 @@ function restartQuiz() {
    // });
 //});
 
-// start quizz with button
+// start quiz with button
 function startQuiz() {
-    selectedQuestions = [];
-    currentIndex = 0;
-    score = 0;
-    streak = 0;
-    availableQuestions = [...rugbyQuestions];
+  selectedQuestions = [];
+  currentIndex = 0;
+  score = 0;
+  streak = 0;
+  oppositionScore = 0;
+  availableQuestions = [...rugbyQuestions];
 
-    selectQuestions();
-    displayQuestion();
+  selectQuestions();
+  displayQuestion();
 
-    document.querySelectorAll(".option-btn").forEach(btn => {
-        btn.addEventListener("click", handleAnswerClick);
-    });
+  document.querySelectorAll(".option-btn").forEach(btn => {
+    btn.addEventListener("click", handleAnswerClick);
+  });
 }
 
 // link start button
 document.addEventListener("DOMContentLoaded", function () {
-    const startBtn = document.getElementById("start-btn");
-    if (startBtn) {
-        startBtn.addEventListener("click", () => {
-            document.getElementById("start-section").classList.add("d-none");
-            document.getElementById("quiz-engine").classList.remove("d-none");
-            startQuiz();
-        });
-    }
-});
+  const startBtn = document.getElementById("start-btn");
+  const startSection = document.getElementById("start-section");
+  const scoreboard = document.querySelector(".center-scoreboard");
+  const quizEngine = document.getElementById("quiz-engine");
 
-document.getElementById("start-btn").addEventListener("click", function () {
-    // Hide start button section
-    document.getElementById("start-section").style.display = "none";
+  startBtn.addEventListener("click", function () {
+    // Hide the start section
+    startSection.classList.add("d-none");
 
     // Show scoreboard and quiz engine
-    document.querySelector(".center-scoreboard").style.display = "flex";
-    document.getElementById("quiz-engine").style.display = "block";
+    scoreboard.classList.remove("d-none");
+    quizEngine.classList.remove("d-none");
 
     // Start the quiz
-    selectQuestions();
-    displayQuestion();
+    startQuiz();
+  });
 });
