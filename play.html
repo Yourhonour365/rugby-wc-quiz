@@ -32,20 +32,65 @@
 		</nav>
 
 		<main class="flex-grow-1 d-flex flex-column">
-
-  <!-- Playing Field + Overlay -->
   <section class="stadium-image-wrapper position-relative">
-    
-
-    <!-- Overlay Content -->
     <div class="overlay-content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-start align-items-center p-3 text-white">
-      
+
       <!-- Scoreboard -->
-      <div class="center-scoreboard d-none my-3">
-        <span id="playerScore">0</span>
-        <span class="score-separator">–</span>
-        <span id="opponentScore">0</span>
-      </div>
+      <!-- Scoreboard and Icons + Double Progress Bars -->
+<div class="quiz-status w-100 d-flex flex-column align-items-center mb-3">
+
+  <!-- Icons + Scoreboard -->
+  <div class="quiz-header w-100 mb-3" id="quiz-header">
+  <div class="score-row d-flex justify-content-between align-items-center w-100">
+    
+	<img src="assets/images/icon-left.png" alt="Player Icon" class="team-icon" style="height: 40px;">
+    
+     <div class="center-scoreboard d-flex justify-content-center align-items-center">
+      <span id="playerScore">0</span>
+      <span class="score-separator mx-2">–</span>
+      <span id="opponentScore">0</span>
+    </div>
+
+    <img src="assets/images/icon-right.png" class="team-icon" />
+  </div>
+
+  <!-- Player Progress Bar -->
+  <div class="progress-streak d-flex justify-content-center gap-1 mb-1">
+    <!-- 12 blocks -->
+    <div class="streak-block bg-success"></div>
+    <div class="streak-block bg-success"></div>
+	<div class="streak-block bg-success"></div>
+    <div class="streak-block bg-success"></div>
+	<div class="streak-block bg-success"></div>
+    <div class="streak-block bg-success"></div>
+	<div class="streak-block bg-success"></div>
+    <div class="streak-block bg-success"></div>
+	<div class="streak-block bg-success"></div>
+    <div class="streak-block bg-success"></div>
+	<div class="streak-block bg-success"></div>
+    <div class="streak-block bg-success"></div>
+	<!-- ... up to 12 blocks -->
+  </div>
+</div>
+  <!-- Opponent Progress Bar -->
+  <div class="progress-streak d-flex justify-content-center gap-1">
+    <!-- 12 blocks -->
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    <div class="streak-block bg-danger"></div>
+    
+    <!-- ... up to 12 blocks -->
+  </div>
+</div>
 
       <!-- Start Button -->
       <div id="start-section" class="d-flex justify-content-center align-items-center text-center" style="min-height: 60vh;">
@@ -55,20 +100,17 @@
       <!-- Quiz Engine -->
       <div id="quiz-engine" class="text-center w-100 d-none">
         <h2 id="question" class="mb-3">Question will appear here</h2>
-
         <div class="d-grid gap-3">
           <button class="btn btn-outline-light option-btn">Option 1</button>
           <button class="btn btn-outline-light option-btn">Option 2</button>
           <button class="btn btn-outline-light option-btn">Option 3</button>
           <button class="btn btn-outline-light option-btn">Option 4</button>
         </div>
-
         <div id="quiz-container" class="mt-4 text-white"></div>
       </div>
 
     </div>
   </section>
-
 </main>
 
 		<!--Footer-->
