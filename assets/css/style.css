@@ -104,7 +104,11 @@ main {
   background-color: var(--turf-dark);
   overflow: hidden;
   width: 100%;
-  min-height: 60vh;
+  min-height: 100vh; /* full screen height */
+  background-image: url('../images/129-field-of-play.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .stadium-image {
