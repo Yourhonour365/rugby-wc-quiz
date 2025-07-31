@@ -77,20 +77,55 @@ function showFinalScore() {
 
 // Restart the quiz
 function restartQuiz() {
+    document.getElementById("quiz-container").innerHTML = ""; // Clear final score
+    document.getElementById("start-section").classList.add("d-none");
+    document.getElementById("quiz-engine").classList.remove("d-none");
+
     selectedQuestions = [];
     currentIndex = 0;
     score = 0;
     streak = 0;
+
+    availableQuestions = [...rugbyQuestions]; // Reset the full question pool
     selectQuestions();
     displayQuestion();
+
 }
 
 // Hook everything up
-document.addEventListener("DOMContentLoaded", function () {
+//document.addEventListener("DOMContentLoaded", function () {
+    //selectQuestions();
+    //displayQuestion();
+
+    //document.querySelectorAll(".option-btn").forEach(btn => {
+        //btn.addEventListener("click", handleAnswerClick);
+   // });
+//});
+
+// start quizz with button
+function startQuiz() {
+    selectedQuestions = [];
+    currentIndex = 0;
+    score = 0;
+    streak = 0;
+    availableQuestions = [...rugbyQuestions];
+
     selectQuestions();
     displayQuestion();
 
     document.querySelectorAll(".option-btn").forEach(btn => {
         btn.addEventListener("click", handleAnswerClick);
     });
+}
+
+// link start button
+document.addEventListener("DOMContentLoaded", function () {
+    const startBtn = document.getElementById("start-btn");
+    if (startBtn) {
+        startBtn.addEventListener("click", () => {
+            document.getElementById("start-section").classList.add("d-none");
+            document.getElementById("quiz-engine").classList.remove("d-none");
+            startQuiz();
+        });
+    }
 });
