@@ -30,6 +30,9 @@ html, body {
   overflow-x: hidden;
 }
 
+.lead {
+  font-size: 1.50rem !important;
+}
 body {
   display: flex;
   flex-direction: column;
