@@ -1,0 +1,96 @@
+
+// select 12 questions handle clicks score based on rugby rules,
+// + show a final screen.
+
+const MAX_QUESTIONS = 12;
+let availableQuestions = [...rugbyQuestions]; // makse SURE rugbyQuestions.js is loaded first!!!
+let selectedQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let streak = 0;
+
+// Shuffle and select 12 questions
+function selectQuestions() {
+    for (let i = 0; i < MAX_QUESTIONS; i++) {
+        const randIndex = Math.floor(Math.random() * availableQuestions.length);
+        selectedQuestions.push(availableQuestions.splice(randIndex, 1)[0]);
+    }
+}
+
+// Display current question and options
+function displayQuestion() {
+    const questionData = selectedQuestions[currentIndex];
+    document.getElementById("question").textContent = questionData.question;
+
+    const buttons = document.querySelectorAll(".option-btn");
+    buttons.forEach((btn, index) => {
+        btn.textContent = questionData.options[index];
+        btn.classList.remove("btn-success", "btn-danger", "disabled");
+        btn.disabled = false;
+    });
+}
+
+// Handle answer click
+function handleAnswerClick(event) {
+    const selected = event.target.textContent;
+    const correct = selectedQuestions[currentIndex].answer;
+    const isCorrect = selected === correct;
+// Scoring logic - basic - need to change for quarterfinal/semi/final
+    if (isCorrect) {
+        streak++;
+        if (streak >= 5) {
+            score += 5; // Try
+        } else if (streak >= 3) {
+            score += 3; // Drop Goal
+        } else {
+            score += 2; // Conversion
+        }
+        event.target.classList.add("btn-success");
+    } else {
+        streak = 0;
+        score -= 3; // Opposition scores
+        event.target.classList.add("btn-danger");
+    }
+
+    // Disable all buttons after answer
+    document.querySelectorAll(".option-btn").forEach(btn => btn.disabled = true);
+
+    // Show next question after 1.5seconds
+    setTimeout(() => {
+        currentIndex++;
+        if (currentIndex < selectedQuestions.length) {
+            displayQuestion();
+        } else {
+            showFinalScore();
+        }
+    }, 1500);
+}
+
+// Show final score screen
+function showFinalScore() {
+    document.getElementById("quiz-container").innerHTML = `
+        <h2 class="text-white">Full Time!</h2>
+        <p class="text-white">Your final score: ${score}</p>
+        <button class="btn btn-light mt-3" onclick="restartQuiz()">Play Again</button>
+    `;
+}
+
+// Restart the quiz
+function restartQuiz() {
+    selectedQuestions = [];
+    currentIndex = 0;
+    score = 0;
+    streak = 0;
+    selectQuestions();
+    displayQuestion();
+}
+
+// Hook everything up
+document.addEventListener("DOMContentLoaded", function () {
+    selectQuestions();
+    displayQuestion();
+
+    document.querySelectorAll(".option-btn").forEach(btn => {
+        btn.addEventListener("click", handleAnswerClick);
+    });
+});
