@@ -104,11 +104,15 @@ main {
   background-color: var(--turf-dark);
   overflow: hidden;
   width: 100%;
-  min-height: 100vh; /* full screen height */
+  min-height: calc(100vh - 120px); /* Enough space for scoreboard + quiz */
   background-image: url('../images/129-field-of-play.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .stadium-image {
@@ -121,23 +125,61 @@ main {
 /* SCOREBOARD OVERLAY */
 .center-scoreboard {
   position: absolute;
-  top: 50%;
+  top: 1rem;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.6);
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
   color: white;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   z-index: 2;
   pointer-events: none;
+  min-width: 180px; /* Ensures width */
+  justify-content: space-between;
 }
 
 .score-separator {
   margin: 0 0.5rem;
+}
+
+/* QUESTIONS OVERLAY */
+
+#quiz-engine {
+  position: relative;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.6); /* Optional dark overlay */
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#quiz-engine,
+.center-scoreboard {
+  display: none;
+}
+
+#quiz-engine {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+#quiz-engine h2#question {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.option-btn {
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.d-grid.gap-3 {
+  gap: 0.5rem !important;
 }
 
 /* ACCORDIONS */
@@ -355,4 +397,21 @@ footer .social-icons a:hover {
     margin-top: 0.75rem;
   }
 }
+@media (max-width: 576px) {
+  .center-scoreboard {
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
+    min-width: 140px;
+  }
+}
 
+@media (max-width: 375px) {
+  #quiz-engine h2#question {
+    font-size: 1rem;
+  }
+
+  .option-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

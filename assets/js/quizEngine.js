@@ -159,3 +159,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.getElementById("start-btn").addEventListener("click", function () {
+    // Hide start button section
+    document.getElementById("start-section").style.display = "none";
+
+    // Show scoreboard and quiz engine
+    document.querySelector(".center-scoreboard").style.display = "flex";
+    document.getElementById("quiz-engine").style.display = "block";
+
+    // Start the quiz
+    selectQuestions();
+    displayQuestion();
+});
