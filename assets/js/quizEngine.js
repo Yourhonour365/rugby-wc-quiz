@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // Quiz setup
 const MAX_QUESTIONS = 12;
 let availableQuestions = [...rugbyQuestions];

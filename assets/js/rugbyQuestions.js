@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 const rugbyQuestions = [
 { question: "Which nation has won the world cup the most number of times?", options: ["South Africa", "New Zealand", "England", "Australia"], answer: "South Africa", difficulty: "med" },
 { question: "Which nation has the highest world cup title win rate?", options: ["South Africa", "New Zealand", "England", "Australia"], answer: "South Africa", difficulty: "hard" },

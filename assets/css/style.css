@@ -150,21 +150,30 @@ main {
   text-align: center;
 }
 
+
+
+.streak-block {
+  width: 20px !important;
+  height: 20px !important;
+  flex: 0 0 20px !important;
+  background-color: #ccc;
+  border: 1px solid white;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
 .progress-streak {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 0.3rem;
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
   margin-top: 0.4rem;
-}
-
-.streak-block {
-  width: 1.4rem;
-  height: 1.4rem;
-  background-color: #ccc;
-  border: 1px solid white;
-  border-radius: 2px;
-  transition: background-color 0.3s ease;
+  padding: 0;
 }
 
 /* ACCORDIONS */

@@ -1,5 +1,6 @@
 
-  document.addEventListener('DOMContentLoaded', function () {
+/* jshint esversion: 6 */
+document.addEventListener('DOMContentLoaded', function () {
   const accordion = document.getElementById('knowledgeAccordion');
 
   if (accordion) {
