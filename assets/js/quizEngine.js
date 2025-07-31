@@ -9,6 +9,9 @@ let currentIndex = 0;
 let score = 0;
 let streak = 0;
 
+//opposition score 
+let oppositionScore = 0; //new function to add oppositions scores
+
 // Shuffle and select 12 questions
 function selectQuestions() {
     for (let i = 0; i < MAX_QUESTIONS; i++) {
@@ -30,12 +33,17 @@ function displayQuestion() {
     });
 }
 
+
 // Handle answer click
 function handleAnswerClick(event) {
     const selected = event.target.textContent;
     const correct = selectedQuestions[currentIndex].answer;
     const isCorrect = selected === correct;
-// Scoring logic - basic - need to change for quarterfinal/semi/final
+
+
+
+
+    // Scoring logic - basic - need to change for quarterfinal/semi/final
     if (isCorrect) {
         streak++;
         if (streak >= 5) {
@@ -45,15 +53,34 @@ function handleAnswerClick(event) {
         } else {
             score += 2; // Conversion
         }
+
+        document.getElementById("playerScore").textContent = score; // Update the scoreboard display player's score
+
+
+
         event.target.classList.add("btn-success");
     } else {
         streak = 0;
-        score -= 3; // Opposition scores
+        //score -= 3; remove negative scores
+        oppositionScore += 3; // add opposition scores
+        
+        
+         document.getElementById("opponentScore").textContent = oppositionScore; // Update the scoreboard display opposition's score
+        
+        
+        
         event.target.classList.add("btn-danger");
+
+        // Optional: Flash a message saying "Opposition scores!"
+        //const container = document.getElementById("quiz-container");
+        //container.innerHTML = `<p class="text-danger fw-bold">Opposition scores 3 points!</p>`;
     }
+
 
     // Disable all buttons after answer
     document.querySelectorAll(".option-btn").forEach(btn => btn.disabled = true);
+
+
 
     // Show next question after 1.5seconds
     setTimeout(() => {
@@ -84,6 +111,9 @@ function restartQuiz() {
     selectedQuestions = [];
     currentIndex = 0;
     score = 0;
+
+    oppositionScore = 0; // Reset opposition score
+
     streak = 0;
 
     availableQuestions = [...rugbyQuestions]; // Reset the full question pool
