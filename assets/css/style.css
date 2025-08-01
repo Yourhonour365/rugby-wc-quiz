@@ -169,6 +169,7 @@ main {
   border-radius: 2px;
   box-sizing: border-box;
   display: inline-block;
+  background-color: transparent; /* 👈 this ensures it's blank initially */
 }
 
 .progress-streak {

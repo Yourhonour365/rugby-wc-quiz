@@ -85,17 +85,16 @@ function displayQuestion() {
 console.log("Opponent streak at start:", opponentStreak);
 function handleAnswerClick(e) {
   const selected = e.target.textContent;
-  console.log("Clicked:", selected); // ✅ Now it works — selected is defined
   const correct = selectedQuestions[currentIndex].answer;
   const isCorrect = selected === correct;
 
   let message = "";
-let points = 0;
+  let points = 0; // ✅ declare early so it's accessible
+
   if (isCorrect) {
     streak++;
     opponentStreak = 0;
 
-    
     let bonusMessage = "";
 
     switch (streak) {
@@ -119,36 +118,35 @@ let points = 0;
     e.target.classList.add("btn-success");
 
   } else {
-  streak = 0;
+    streak = 0;
 
-  let opponentPoints = 0;
-  let penaltyMessage = "";
+    let penaltyMessage = "";
 
-  if (opponentStreak === 0) {
-    opponentPoints = 0;
-    penaltyMessage = "❌ First mistake – no points for opponent.";
-  } else if (opponentStreak === 1) {
-    opponentPoints = 5;
-    penaltyMessage = "😬 2nd mistake – Opponent scores +5!";
-  } else if (opponentStreak === 2) {
-    opponentPoints = 2;
-    penaltyMessage = "💥 3rd mistake – Opponent scores +2!";
+    if (opponentStreak === 0) {
+      points = 0;
+      penaltyMessage = "❌ First mistake – no points for opponent.";
+    } else if (opponentStreak === 1) {
+      points = 5;
+      penaltyMessage = "😬 2nd mistake – Opponent scores +5!";
+    } else if (opponentStreak === 2) {
+      points = 2;
+      penaltyMessage = "💥 3rd mistake – Opponent scores +2!";
+    }
+
+    opponentStreak++;
+    if (opponentStreak > 2) opponentStreak = 0;
+
+    oppositionScore += points;
+    document.getElementById("opponentScore").textContent = oppositionScore;
+    e.target.classList.add("btn-danger");
+
+    message = `❌ Incorrect. ${penaltyMessage}`;
   }
 
-  // Only increment *after* determining result
-  opponentStreak++;
-  if (opponentStreak > 2) opponentStreak = 0;
-
-  message = `❌ Incorrect. ${penaltyMessage}`;
-  oppositionScore += opponentPoints;
-  document.getElementById("opponentScore").textContent = oppositionScore;
-  e.target.classList.add("btn-danger");
-}
   showStreakMessage(message);
-
   document.querySelectorAll(".option-btn").forEach(btn => btn.disabled = true);
   updateProgressBar(isCorrect, points);
-
+  
   setTimeout(() => {
     currentIndex++;
     if (currentIndex < selectedQuestions.length) {
@@ -164,14 +162,20 @@ function updateProgressBar(isCorrect, pointsScored) {
   const bottomBlocks = document.querySelectorAll("#bottom-progress .streak-block");
   const topBlocks = document.querySelectorAll("#top-progress .streak-block");
 
-  // Always mark the bottom bar: red or green
+  // Bottom bar (always updates)
   if (bottomBlocks[currentIndex]) {
     bottomBlocks[currentIndex].classList.add(isCorrect ? "bg-success" : "bg-danger");
   }
 
-  // Only mark the top bar if player scored points (Try, Conversion, etc)
-  if (isCorrect && pointsScored > 0 && topBlocks[currentIndex]) {
-    topBlocks[currentIndex].classList.add("bg-success");
+  // Top bar (only if points are scored)
+  if (topBlocks[currentIndex]) {
+    if (isCorrect && pointsScored > 0) {
+      topBlocks[currentIndex].textContent = pointsScored;
+      topBlocks[currentIndex].style.color = "limegreen";
+    } else if (!isCorrect && pointsScored > 0) {
+      topBlocks[currentIndex].textContent = pointsScored;
+      topBlocks[currentIndex].style.color = "red";
+    }
   }
 }
 
