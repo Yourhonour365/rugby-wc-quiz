@@ -1,3 +1,4 @@
+
 // ===== Question Set =====
 /* jshint esversion: 6 */
 const rugbyQuestions = [
@@ -9,7 +10,7 @@ const rugbyQuestions = [
 { question: "How many wings are there in a rugby team?", options: ["1", "2", "3", "4"], answer: "2", difficulty: "Easy" },
 { question: "How many players are in the back line of a rugby team?", options: ["5", "6", "7", "8"], answer: "7", difficulty: "Easy" },
 { question: "What number is the scrum half in rugby?", options: ["7", "8", "9", "10"], answer: "9", difficulty: "Easy" },
-{ question: "What numbers do the props wear in rugby?", options: ["1,2", "2,3", "3,4", "4,5"], answer: "1,2", difficulty: "Easy" },
+{ question: "What numbers do the props wear in rugby?", options: ["1 & 2", "1 & 3", "3 & 4", "4 & 5"], answer: "1 & 3", difficulty: "Easy" },
 { question: "How many times has Richie McCaw won the rugby world cup?", options: ["0", "1", "2", "3"], answer: "2", difficulty: "Easy" },
 { question: "What shape is a rugby ball?", options: ["Square", "Triangle", "Round", "Oval"], answer: "Oval", difficulty: "Easy" },
 { question: "Which country did Ritchie McCaw play rugby world cup rugby for?", options: ["England", "Australia", "Scotland", "New Zealand"], answer: "New Zealand", difficulty: "Easy" },
@@ -19,7 +20,7 @@ const rugbyQuestions = [
 { question: "Which country is Siya Kolisi from?", options: ["South Africa", "Fiji", "Tonga", "Samoa"], answer: "South Africa", difficulty: "Easy" },
 { question: "Which stadium in England has hosted a rugby world cup final at least once?", options: ["Twickeham", "Sandy Park", "Kingsholm Stadium", "Ashton Gate"], answer: "Twickeham", difficulty: "Easy" },
 { question: "What is the main rugby stadium in Auckland called?", options: ["Auckland National Stadium", "North Harbour", "Waikato", "Eden Park"], answer: "Eden Park", difficulty: "Easy" },
-{ question: "Does rugby have an offside rule?", options: ["Yes", "No", "", ""], answer: "Yes", difficulty: "Easy" },
+{ question: "Does rugby have an offside rule?", options: ["Yes", "No", "Only For Attack", "Only For Defence"], answer: "Yes", difficulty: "Easy" },
 { question: "How many officials are on the field during a rugby world cup game?", options: ["1", "2", "3", "4"], answer: "1", difficulty: "Easy" },
 ];
 
@@ -100,19 +101,19 @@ function handleAnswerClick(e) {
     switch (streak) {
       case 3:
         points = 5;
-        bonusMessage = "🔥 Breakthrough! +5 points";
+        bonusMessage = "great try!";
         break;
       case 4:
         points = 2;
-        bonusMessage = "➡️ Follow-up! +2 points";
+        bonusMessage = "solid conversion!";
         break;
       case 5:
         points = 3;
-        bonusMessage = "💪 Sustained Pressure! +3 points";
+        bonusMessage = "penalty kick!";
         break;
     }
 
-    message = `✅ Correct!${bonusMessage ? " — " + bonusMessage : ""}`;
+    message = `Correct!${bonusMessage ? " — " + bonusMessage : ""}`;
     score += points;
     document.getElementById("playerScore").textContent = score;
     e.target.classList.add("btn-success");
@@ -124,13 +125,13 @@ function handleAnswerClick(e) {
 
     if (opponentStreak === 0) {
       points = 0;
-      penaltyMessage = "❌ First mistake – no points for opponent.";
+      penaltyMessage = "possession conceded";
     } else if (opponentStreak === 1) {
       points = 5;
-      penaltyMessage = "😬 2nd mistake – Opponent scores +5!";
+      penaltyMessage = "try conceded";
     } else if (opponentStreak === 2) {
       points = 2;
-      penaltyMessage = "💥 3rd mistake – Opponent scores +2!";
+      penaltyMessage = "try converted!";
     }
 
     opponentStreak++;
@@ -140,7 +141,7 @@ function handleAnswerClick(e) {
     document.getElementById("opponentScore").textContent = oppositionScore;
     e.target.classList.add("btn-danger");
 
-    message = `❌ Incorrect. ${penaltyMessage}`;
+    message = `Incorrect ${penaltyMessage}`;
   }
 
   showStreakMessage(message);
