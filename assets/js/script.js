@@ -1,4 +1,5 @@
 
+
 // ===== Question Set =====
 /* jshint esversion: 6 */
 const rugbyQuestions = [
@@ -182,18 +183,11 @@ function updateProgressBar(isCorrect, pointsScored) {
 
 // ===== Show Final Score =====
 function showFinalScore() {
-  const resultText = score > oppositionScore
-    ? "🏆 You Win!"
-    : score < oppositionScore
-    ? "😓 You Lose!"
-    : "🤝 It's a Draw!";
-
   const quiz = document.getElementById("quiz-container");
   quiz.innerHTML = `
     <h2 class="text-white">Full Time!</h2>
-    <h3 class="text-white mb-3">${resultText}</h3>
-    <button class="btn btn-success mt-3 me-2" onclick="restartQuiz()">Play Again</button>
-    <a href="index.html" class="btn btn-outline-light mt-3">Home</a>
+    <p class="text-white">Your final score: ${score}</p>
+    <button class="btn btn-light mt-3" onclick="restartQuiz()">Play Again</button>
   `;
 }
 
