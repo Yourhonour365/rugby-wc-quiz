@@ -1,42 +1,15 @@
+// ===== Question Set =====
 /* jshint esversion: 6 */
 const rugbyQuestions = [
-{ question: "Which nation has won the world cup the most number of times?", options: ["South Africa", "New Zealand", "England", "Australia"], answer: "South Africa", difficulty: "med" },
-{ question: "Which nation has the highest world cup title win rate?", options: ["South Africa", "New Zealand", "England", "Australia"], answer: "South Africa", difficulty: "hard" },
-{ question: "Which nation has appeared in the most semi-finals?", options: ["New Zealand", "Australia", "England", "France"], answer: "New Zealand", difficulty: "med" },
-{ question: "Which nation has appeared in the most quarter-finals?", options: ["South Africa", "New Zealand", "England", "Australia"], answer: "New Zealand", difficulty: "med" },
-{ question: "How many rugby world cups have Scotland played in?", options: ["6", "8", "9", "10"], answer: "10", difficulty: "hard" },
-{ question: "How many teams have appeared in every rugby world cup?", options: ["4", "6", "8", "10"], answer: "10", difficulty: "hard" },
-{ question: "How many pool games have New Zealand played at World Cups?", options: ["44", "54", "64", "74"], answer: "64", difficulty: "hard" },
-{ question: "How many pool games have New Zealand lost at rugby world cups?", options: ["0", "3", "6", "9"], answer: "9", difficulty: "hard" },
-{ question: "What is the maximum number of points scored in a rugby world cup game?", options: ["105", "115", "127", "145"], answer: "145", difficulty: "Med" },
-{ question: "What is the biggest winning margin in a rugby world cup game?", options: ["52", "72", "102", "142"], answer: "142", difficulty: "Hard" },
-{ question: "Which country has scored the most tries in a single rugby world cup match?", options: ["South Africa", "New Zealand", "England", "Australia"], answer: "Australia", difficulty: "Hard" },
-{ question: "How many points has Dan Carter scored from conversions in rugby world cups?", options: ["116", "126", "136", "146"], answer: "116", difficulty: "Hard" },
-{ question: "Who has scored the most points in a single rugby world cup tournament?", options: ["Dan Carter", "Handré Pollard", "Michael Lynagh", "Jonny Wilkinson"], answer: "Michael Lynagh", difficulty: "Med" },
-{ question: "What is the most number of points scored by an individual player in a rugby world cup match?", options: ["35", "40", "45", "48"], answer: "45", difficulty: "Hard" },
-{ question: "What is the record for the most tries scored by a player at rugby world cups?", options: ["6", "7", "8", "9"], answer: "8", difficulty: "Med" },
 { question: "How many points are awarded for a try in rugby world cup matches?", options: ["2", "3", "4", "5"], answer: "5", difficulty: "Easy" },
 { question: "How many points are awarded for a drop kick in rugby world cup matches?", options: ["1", "2", "3", "4"], answer: "3", difficulty: "Easy" },
 { question: "How many points are awarded for a penalty in rugby world cup matches?", options: ["1", "2", "3", "4"], answer: "3", difficulty: "Easy" },
 { question: "How many points are awarded for a conversion in rugby world cup matches?", options: ["1", "2", "3", "4"], answer: "2", difficulty: "Easy" },
-{ question: "Who has scored the most tries in a rugby world cup match for Scotland?", options: ["Darcy Graham,Gavin Hastings", "Dan Parks,Gregor Townsend", "Gavin Hastings,Gregor Townsend", "Darcy Graham,Dan Parks"], answer: "Darcy Graham,Gavin Hastings", difficulty: "Hard" },
-{ question: "Who has scored the most tries in a rugby world cup match for New Zealand?", options: ["Jonah Lomu", "Marc Ellis", "John Gallagher", "Craig Green"], answer: "Marc Ellis", difficulty: "Hard" },
-{ question: "What is the most tries scored by an individual player in a rugby world cup match for Ireland?", options: ["3", "4", "5", "6"], answer: "4", difficulty: "Hard" },
-{ question: "Who has scored the most tries for Fiji in a single rugby world cup match?", options: ["Vereniki Goneva", "Piri Weepu", "Peni Matawalu", "Waisea Nayacalevu"], answer: "Vereniki Goneva", difficulty: "Hard" },
-{ question: "Who has the most overall conversions in rugby world cups?", options: ["Dan Carter", "Gavin Hastings", "Jonny Wilkinson", "Michael Lynagh"], answer: "Dan Carter", difficulty: "Med" },
-{ question: "Who scored the most conversions in the 2023 rugby world cup?", options: ["Handré Pollard", "Thomas Ramos", "Richie Mo'unga", "George Ford"], answer: "Thomas Ramos", difficulty: "Hard" },
-{ question: "Who has scored the most conversions in a single rugby world cup match?", options: ["Grant Fox", "Simon Culhane", "Richie Mo'unga", "Dan Carter"], answer: "Simon Culhane", difficulty: "Hard" },
-{ question: "Who has scored the most penalties in rugby world cups?", options: ["Jonny Wilkinson", "Michael Lynagh", "Andrew Mehrtens", "Dan Carter"], answer: "Jonny Wilkinson", difficulty: "Med" },
-{ question: "What is the record for most penalties by a single player in one rugby world cup tournament?", options: ["27", "31", "35", "37"], answer: "31", difficulty: "Hard" },
-{ question: "Who scored the most penalties in the 1995 rugby world cup?", options: ["Gonzalo Quesada", "Matt Burke", "Gonzalo Quesada", "Thierry Lacroix"], answer: "Thierry Lacroix", difficulty: "Hard" },
-{ question: "Who has scored the most drop goals in the history of rugby world cups?", options: ["Jonny Wilkinson", "Jannie de Beer", "Rob Andrew", "Handré Pollard"], answer: "Jonny Wilkinson", difficulty: "Med" },
-{ question: "Who has scored the most drop goals in one rugby world cup tournament?", options: ["Jonny Wilkinson", "Jannie de Beer", "Rob Andrew", "Handré Pollard"], answer: "Jonny Wilkinson", difficulty: "Med" },
 { question: "How many forwards are there in a rugby team?", options: ["6", "7", "8", "9"], answer: "8", difficulty: "Easy" },
 { question: "How many wings are there in a rugby team?", options: ["1", "2", "3", "4"], answer: "2", difficulty: "Easy" },
 { question: "How many players are in the back line of a rugby team?", options: ["5", "6", "7", "8"], answer: "7", difficulty: "Easy" },
 { question: "What number is the scrum half in rugby?", options: ["7", "8", "9", "10"], answer: "9", difficulty: "Easy" },
-{ question: "What numbers do the props wear in rugby?", options: ["1 & 2", "2 & 3", "3 & 4", "4 & 5"], answer: "1 & 3", difficulty: "Easy" },
-{ question: "How many half-backs are there in a rugby team?", options: ["1", "2", "3", "4"], answer: "2", difficulty: "Med" },
+{ question: "What numbers do the props wear in rugby?", options: ["1,2", "2,3", "3,4", "4,5"], answer: "1,2", difficulty: "Easy" },
 { question: "How many times has Richie McCaw won the rugby world cup?", options: ["0", "1", "2", "3"], answer: "2", difficulty: "Easy" },
 { question: "What shape is a rugby ball?", options: ["Square", "Triangle", "Round", "Oval"], answer: "Oval", difficulty: "Easy" },
 { question: "Which country did Ritchie McCaw play rugby world cup rugby for?", options: ["England", "Australia", "Scotland", "New Zealand"], answer: "New Zealand", difficulty: "Easy" },
@@ -46,60 +19,11 @@ const rugbyQuestions = [
 { question: "Which country is Siya Kolisi from?", options: ["South Africa", "Fiji", "Tonga", "Samoa"], answer: "South Africa", difficulty: "Easy" },
 { question: "Which stadium in England has hosted a rugby world cup final at least once?", options: ["Twickeham", "Sandy Park", "Kingsholm Stadium", "Ashton Gate"], answer: "Twickeham", difficulty: "Easy" },
 { question: "What is the main rugby stadium in Auckland called?", options: ["Auckland National Stadium", "North Harbour", "Waikato", "Eden Park"], answer: "Eden Park", difficulty: "Easy" },
-{ question: "Who has played the most rugby world cup matches?", options: ["Sam Whitelock", "Richie McCaw", "Keven Mealamu", "Sonny Bill Williams"], answer: "Sam Whitelock", difficulty: "Med" },
-{ question: "Who has the most winning appearances in matches for South Africa at rugby world cups?", options: ["François Steyn", "Jannie de Beer", "Morne Steyn", "Handré Pollard"], answer: "François Steyn", difficulty: "Med" },
-{ question: "How many nations have qualified for rugby world cups?", options: ["23", "26", "29", "33"], answer: "23", difficulty: "Hard" },
-{ question: "How many nations have appeared at all rugby world cups?", options: ["8", "10", "12", "14"], answer: "10", difficulty: "Hard" },
-{ question: "Who is the youngest ever scorer in a rugby world cup game?", options: ["Dan Carter", "François Steyn", "George North", "Johnny Wilkinson"], answer: "George North", difficulty: "Hard" },
-{ question: "Who is the oldest player to win a rugby world cup final?", options: ["Ritchie McCaw", "Schalk Brits", "Duane Vermeulen", "Dan Carter"], answer: "Duane Vermeulen", difficulty: "Hard" },
-{ question: "Who is the youngest player to win a rugby world cup final?", options: ["Jonah Lomu", "Dan Carter", "François Steyn", "Dan Carter"], answer: "François Steyn", difficulty: "Hard" },
-{ question: "Who is the oldest player to appear in a world cup match?", options: ["Diego Ormaechea", "Sam Whitelock", "Richie McCaw", "Keven Mealamu"], answer: "Diego Ormaechea", difficulty: "Hard" },
-{ question: "Which captain lifted the 1987 rugby world cup?", options: ["David Kirk", "Craig Green", "Grant Fox", "John Gallagher"], answer: "David Kirk", difficulty: "Med" },
-{ question: "Who was the coach of the 1991 rugby world cup winning team?", options: ["Nick Farr-Jones", "Bob Dwyer", "Rod MacQueen", "James Burke"], answer: "Bob Dwyer", difficulty: "Med" },
-{ question: "Which team got the most red cards in 1995?", options: ["South Africa", "Samoa", "Tonga", "Canada"], answer: "Canada", difficulty: "Med" },
-{ question: "How many red cards has Tonga received at the rugby world cup", options: ["1", "2", "3", "4"], answer: "4", difficulty: "Hard" },
-{ question: "How many red cards has Samoa received at the rugby world cup", options: ["1", "2", "3", "4"], answer: "4", difficulty: "Hard" },
-{ question: "How many red cards have New Zealand and South Africa received at rugby world cups?", options: ["0", "1", "2", "3"], answer: "2", difficulty: "Hard" },
-{ question: "Ignoring cancelled rugby world cup matches, how many games have been drawn at rugby world cups?", options: ["4", "6", "8", "10"], answer: "4", difficulty: "Hard" },
-{ question: "How many rugby world cups has Portugal played in?", options: ["0", "1", "2", "3"], answer: "2", difficulty: "Hard" },
-{ question: "Ignoring cancelled rugby world cup matches, how many games have had a nil scoreline by at least one team?", options: ["15", "20", "25", "30"], answer: "20", difficulty: "Hard" },
-{ question: "Which game has had the highest attendance at rugby world cups?", options: ["Ireland v Romania", "South Africa v New Zealand", "England v New Zealand", "Australia v England"], answer: "Ireland v Romania", difficulty: "Med" },
-{ question: "Which game has had the lowest attendance at rugby world cups?", options: ["Ivory Coast v Zimbabwe", "Argentina v Italy", "Chile v Namibia", "Uruguay v Romania"], answer: "Argentina v Italy", difficulty: "Med" },
-{ question: "Who was the first sole host nation to be eliminated in the pool stage of a rugby world cup?", options: ["England", "France", "Wales", "Scotland"], answer: "England", difficulty: "Hard" },
-{ question: "How many times have teams played each other twice at the same world cup?", options: ["3", "4", "5", "6"], answer: "4", difficulty: "Med" },
-{ question: "How many times have England played Ireland at the rugby world cup?", options: ["0", "1", "2", "3"], answer: "0", difficulty: "Med" },
-{ question: "Which rugby world cup final is the only one where both finalists had previously lost a game in the tournament?", options: ["1987", "2003", "2019", "2023"], answer: "2023", difficulty: "Hard" },
-{ question: "How many times have New Zealand played the opening world cup match?", options: ["3", "4", "5", "6"], answer: "4", difficulty: "Med" },
-{ question: "Which teams have made the quarter finals of every world cup they have competed in?", options: ["France, New Zealand, South Africa", "New Zealand, France, England", "New Zealand, Australia, South Africa", "New Zealand, France, Australia"], answer: "France, New Zealand, South Africa", difficulty: "Med" },
-{ question: "Which is the only non-English speaking team to make it to the rugby world cup final?", options: ["Argentina", "France", "Italy", "Japan"], answer: "France", difficulty: "Med" },
-{ question: "Which tier 2 nation has played every world cup?", options: ["Japan", "Italy", "Argentina", "Wales"], answer: "Japan", difficulty: "Hard" },
-{ question: "How many tier 2 countries have made it to the quarter finals?", options: ["3", "4", "5", "6"], answer: "4", difficulty: "Hard" },
-{ question: "Which year was the rugby world cup’s highest scoring final match played?", options: ["1987", "1995", "2015", "2023"], answer: "2015", difficulty: "Med" },
-{ question: "How many players have won the world cup rugby twice?", options: ["29", "37", "39", "44"], answer: "44", difficulty: "Hard" },
-{ question: "How many Australian players have won the rugby world cup twice?", options: ["0", "5", "8", "15"], answer: "5", difficulty: "Hard" },
-{ question: "How many New Zealand players have won the world cup rugby twice?", options: ["14", "18", "21", "24"], answer: "14", difficulty: "Hard" },
-{ question: "How many South African players have won the rugby world cup twice?", options: ["15", "20", "25", "30"], answer: "25", difficulty: "Hard" },
-{ question: "How many world cup games has New Zealand played?", options: ["44", "54", "64", "74"], answer: "64", difficulty: "Hard" },
-{ question: "How many world cup games has New Zealand won?", options: ["44", "54", "64", "74"], answer: "54", difficulty: "Hard" },
-{ question: "How many world cup games has New Zealand lost?", options: ["3", "6", "9", "12"], answer: "9", difficulty: "Hard" },
-{ question: "How many games has the USA won at the rugby world cup finals?", options: ["0", "1", "2", "3"], answer: "3", difficulty: "Hard" },
-{ question: "How many games has Portugal won at the rugby world cup finals?", options: ["0", "1", "2", "3"], answer: "1", difficulty: "Hard" },
-{ question: "How many seconds were left on the clock when Johnny Wilkinson scored the winning drop kick for England against Australia in the 2003 final?", options: ["16", "26", "36", "46"], answer: "26", difficulty: "Hard" },
-{ question: "Who holds the record for the longest drop goal in a rugby world cup match?", options: ["Andrew Miller", "Johnny Wilkinson", "Jannie De Beer", "Dan Carter"], answer: "Andrew Miller", difficulty: "Hard" },
-{ question: "Has Russia ever played in the rugby world cup tournament?", options: ["Yes", "No", "Only Qualifying Games", "Only Preliminary Games"], answer: "Yes", difficulty: "Med" },
-{ question: "Has Spain ever played in the rugby world cup tournament?", options: ["Yes", "No", "Only Qualifying Games", "Only Preliminary Games"], answer: "Yes", difficulty: "Med" },
-{ question: "Does rugby have an offside rule?", options: ["Yes", "No", "Only For Attacking Plays", "Only For Defensive Plays"], answer: "Yes", difficulty: "Easy" },
-{ question: "Which of the following items can rugby players NOT legally wear while playing a game at the rugby world cup?", options: ["Gloves", "Mittens", "Goggles", "Head protection"], answer: "Gloves", difficulty: "Med" },
-{ question: "How far is the longest drop goal ever scored at the world cup?", options: ["50m", "52m", "54m", "56m"], answer: "52m", difficulty: "Hard" },
-{ question: "Which stadium hosted the 2003 rugby world cup final?", options: ["Telstra Stadium", "SCG", "MCG", "The Gabba"], answer: "Telstra Stadium", difficulty: "Med" },
-{ question: "Which stadium hosted the 2019 rugby world cup final?", options: ["Toyota Stadium", "Nissan Stadium", "Yokohama Stadium", "Tokyo Stadium"], answer: "Nissan Stadium", difficulty: "Med" },
-{ question: "How many world cup finals has South Africa won at the Stade De France?", options: ["0", "1", "2", "3"], answer: "2", difficulty: "Med" },
-{ question: "Which rugby player became the first springbok to score in all four possible ways in one test match?", options: ["Joel Stransky", "Handré Pollard", "Jannie De Beer", "François Steyn"], answer: "Joel Stransky", difficulty: "Med" },
+{ question: "Does rugby have an offside rule?", options: ["Yes", "No", "", ""], answer: "Yes", difficulty: "Easy" },
 { question: "How many officials are on the field during a rugby world cup game?", options: ["1", "2", "3", "4"], answer: "1", difficulty: "Easy" },
-{ question: "What is the maximum number of replacements a team can have available for a rugby world cup match?", options: ["4", "6", "8", "10"], answer: "8", difficulty: "Med" },
 ];
 
-// Quiz setup
+// ===== Quiz Variables =====
 const MAX_QUESTIONS = 12;
 let availableQuestions = [...rugbyQuestions];
 let selectedQuestions = [];
@@ -107,7 +31,25 @@ let currentIndex = 0;
 let score = 0;
 let streak = 0;
 let oppositionScore = 0;
+let opponentStreak = 0;
 
+// ===== Helper: Show Streak Message =====
+function showStreakMessage(message) {
+  const msgEl = document.getElementById("streak-message");
+  if (!msgEl) return;
+  msgEl.textContent = message;
+  msgEl.classList.add("show");
+}
+
+// ===== Clear Streak Message =====
+function clearStreakMessage() {
+  const msgEl = document.getElementById("streak-message");
+  if (!msgEl) return;
+  msgEl.textContent = "";
+  msgEl.classList.remove("show");
+}
+
+// ===== Select Random Questions =====
 function selectQuestions() {
   selectedQuestions = [];
   for (let i = 0; i < MAX_QUESTIONS && availableQuestions.length; i++) {
@@ -116,36 +58,96 @@ function selectQuestions() {
   }
 }
 
+// ===== Display Question =====
 function displayQuestion() {
   const q = selectedQuestions[currentIndex];
   document.getElementById("question").textContent = q.question;
-  const buttons = document.querySelectorAll(".option-btn");
-  buttons.forEach((btn, i) => {
-    btn.textContent = q.options[i];
-    btn.classList.remove("btn-success", "btn-danger", "disabled");
-    btn.disabled = false;
+
+  const container = document.getElementById("options-container");
+  container.innerHTML = ""; // ✅ Clear old buttons & listeners
+
+  q.options.forEach(optionText => {
+    const btn = document.createElement("button");
+    btn.className = "btn btn-outline-light option-btn";
+    btn.textContent = optionText;
+
+    btn.addEventListener("click", (e) => {
+      console.log("Clicked:", e.target.textContent);
+      console.log("Opponent streak at start:", opponentStreak);
+      clearStreakMessage();
+      handleAnswerClick(e);
+    });
+
+    container.appendChild(btn);
   });
 }
-
+// ===== Handle Answer Click =====
+console.log("Opponent streak at start:", opponentStreak);
 function handleAnswerClick(e) {
   const selected = e.target.textContent;
+  console.log("Clicked:", selected); // ✅ Now it works — selected is defined
   const correct = selectedQuestions[currentIndex].answer;
   const isCorrect = selected === correct;
 
+  let message = "";
+
   if (isCorrect) {
     streak++;
-    score += streak >= 5 ? 5 : streak >= 3 ? 3 : 2;
+    opponentStreak = 0;
+
+    let points = 0;
+    let bonusMessage = "";
+
+    switch (streak) {
+      case 3:
+        points = 5;
+        bonusMessage = "🔥 Breakthrough! +5 points";
+        break;
+      case 4:
+        points = 2;
+        bonusMessage = "➡️ Follow-up! +2 points";
+        break;
+      case 5:
+        points = 3;
+        bonusMessage = "💪 Sustained Pressure! +3 points";
+        break;
+    }
+
+    message = `✅ Correct!${bonusMessage ? " — " + bonusMessage : ""}`;
+    score += points;
     document.getElementById("playerScore").textContent = score;
     e.target.classList.add("btn-success");
+
   } else {
-    streak = 0;
-    oppositionScore += 3;
-    document.getElementById("opponentScore").textContent = oppositionScore;
-    e.target.classList.add("btn-danger");
+  streak = 0;
+
+  let opponentPoints = 0;
+  let penaltyMessage = "";
+
+  if (opponentStreak === 0) {
+    opponentPoints = 0;
+    penaltyMessage = "❌ First mistake – no points for opponent.";
+  } else if (opponentStreak === 1) {
+    opponentPoints = 5;
+    penaltyMessage = "😬 2nd mistake – Opponent scores +5!";
+  } else if (opponentStreak === 2) {
+    opponentPoints = 2;
+    penaltyMessage = "💥 3rd mistake – Opponent scores +2!";
   }
 
+  // Only increment *after* determining result
+  opponentStreak++;
+  if (opponentStreak > 2) opponentStreak = 0;
+
+  message = `❌ Incorrect. ${penaltyMessage}`;
+  oppositionScore += opponentPoints;
+  document.getElementById("opponentScore").textContent = oppositionScore;
+  e.target.classList.add("btn-danger");
+}
+  showStreakMessage(message);
+
   document.querySelectorAll(".option-btn").forEach(btn => btn.disabled = true);
-  updateProgressBar();
+  updateProgressBar(isCorrect);
 
   setTimeout(() => {
     currentIndex++;
@@ -157,13 +159,15 @@ function handleAnswerClick(e) {
   }, 600);
 }
 
-function updateProgressBar() {
+// ===== Update Progress Bar =====
+function updateProgressBar(isCorrect) {
   const blocks = document.querySelectorAll(".progress-block");
   if (blocks[currentIndex]) {
-    blocks[currentIndex].classList.add(streak ? "bg-success" : "bg-danger");
+    blocks[currentIndex].classList.add(isCorrect ? "bg-success" : "bg-danger");
   }
 }
 
+// ===== Show Final Score =====
 function showFinalScore() {
   const quiz = document.getElementById("quiz-container");
   quiz.innerHTML = `
@@ -173,22 +177,38 @@ function showFinalScore() {
   `;
 }
 
+// ===== Restart Quiz =====
 function restartQuiz() {
   document.getElementById("quiz-container").innerHTML = originalQuizHTML;
-  currentIndex = score = streak = oppositionScore = 0;
+
+  // Reset all quiz state
+  currentIndex = 0;
+  score = 0;
+  streak = 0;
+  oppositionScore = 0;
+  opponentStreak = 0;
+
+  // Reset question pool
   availableQuestions = [...rugbyQuestions];
   selectQuestions();
-  displayQuestion();
-  document.querySelectorAll(".option-btn").forEach(btn => {
-    btn.addEventListener("click", handleAnswerClick);
-  });
+  displayQuestion(); // 🔁 handles button setup now
+
+  // Reset scores on screen
   document.getElementById("playerScore").textContent = 0;
   document.getElementById("opponentScore").textContent = 0;
-  document.querySelectorAll(".progress-block").forEach(b => b.classList.remove("bg-success", "bg-danger"));
+
+  // Clear progress bar visuals
+  document.querySelectorAll(".progress-block").forEach(b => {
+    b.classList.remove("bg-success", "bg-danger");
+  });
+
+  // 💬 Clear any streak message
+  clearStreakMessage();
 }
 
-// Save original quiz HTML for reuse
 let originalQuizHTML = "";
+
+// ===== DOMContentLoaded =====
 document.addEventListener("DOMContentLoaded", function () {
   const quiz = document.getElementById("quiz-container");
   if (quiz) originalQuizHTML = quiz.innerHTML;
@@ -196,28 +216,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const startBtn = document.getElementById("start-btn");
   const scoreboard = document.querySelector(".center-scoreboard");
   const quizEngine = document.getElementById("quiz-engine");
-
-  if (startBtn && scoreboard && quizEngine) {
-    startBtn.addEventListener("click", function () {
-      document.getElementById("start-section")?.classList.add("d-none");
-      scoreboard.classList.remove("d-none");
-      quizEngine.classList.remove("d-none");
-      selectQuestions();
-      displayQuestion();
-      document.querySelectorAll(".option-btn").forEach(btn => {
-        btn.addEventListener("click", handleAnswerClick);
-      });
-    });
-  }
-
-  // Login/Signup/Logout logic
   const createAccountBtn = document.getElementById("create-account-btn");
   const loginBtn = document.getElementById("login-btn");
   const logoutBtn = document.getElementById("logout-btn");
+  const signupForm = document.getElementById("signup-form");
+  const loginForm = document.getElementById("login-form");
   const startSection = document.getElementById("start-section");
   const signupSection = document.getElementById("signup-section");
   const loginSection = document.getElementById("login-section");
   const startQuizLink = document.getElementById("start-quiz-link");
+  const authButtons = document.getElementById("auth-buttons");
 
   const isLoggedIn = localStorage.getItem("rwcQuizLoggedIn") === "true";
   if (isLoggedIn) {
@@ -225,6 +233,11 @@ document.addEventListener("DOMContentLoaded", function () {
     loginBtn?.classList.add("d-none");
     logoutBtn?.classList.remove("d-none");
     startQuizLink?.classList.remove("d-none");
+    authButtons?.classList.add("d-none");
+    startBtn?.classList.remove("d-none");
+  } else {
+    authButtons?.classList.remove("d-none");
+    startBtn?.classList.add("d-none");
   }
 
   logoutBtn?.addEventListener("click", () => {
@@ -237,8 +250,12 @@ document.addEventListener("DOMContentLoaded", function () {
     signupSection?.classList.remove("d-none");
   });
 
-  const signupForm = document.getElementById("signup-form");
-  signupForm?.addEventListener("submit", function (e) {
+  loginBtn?.addEventListener("click", () => {
+    startSection?.classList.add("d-none");
+    loginSection?.classList.remove("d-none");
+  });
+
+  signupForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     const username = document.getElementById("signup-username").value.trim();
     const password = document.getElementById("signup-password").value.trim();
@@ -248,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     localStorage.setItem("rwcQuizLoggedIn", "true");
     alert("Account created!");
-    signupSection.classList.add("d-none");
+    signupSection?.classList.add("d-none");
     startSection?.classList.remove("d-none");
     createAccountBtn?.classList.add("d-none");
     loginBtn?.classList.add("d-none");
@@ -256,13 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startQuizLink?.classList.remove("d-none");
   });
 
-  loginBtn?.addEventListener("click", () => {
-    startSection?.classList.add("d-none");
-    loginSection?.classList.remove("d-none");
-  });
-
-  const loginForm = document.getElementById("login-form");
-  loginForm?.addEventListener("submit", function (e) {
+  loginForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     const username = document.getElementById("login-username").value.trim();
     const password = document.getElementById("login-password").value.trim();
@@ -272,11 +283,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     localStorage.setItem("rwcQuizLoggedIn", "true");
     alert("Login successful!");
-    loginSection.classList.add("d-none");
+    loginSection?.classList.add("d-none");
+    startSection?.classList.remove("d-none");
     createAccountBtn?.classList.add("d-none");
     loginBtn?.classList.add("d-none");
     logoutBtn?.classList.remove("d-none");
-    startSection?.classList.remove("d-none");
     startQuizLink?.classList.remove("d-none");
   });
+
+  startBtn?.addEventListener("click", function () {
+    startSection?.classList.add("d-none");
+    scoreboard?.classList.remove("d-none");
+    quizEngine?.classList.remove("d-none");
+    selectQuestions();
+    displayQuestion();
+    
+  });
+
+  // Handle redirect fragments
+  const hash = window.location.hash;
+  if (hash === "#login-section") {
+    startSection?.classList.add("d-none");
+    loginSection?.classList.remove("d-none");
+    history.replaceState(null, null, "index.html");
+  }
+  if (hash === "#signup-section") {
+    startSection?.classList.add("d-none");
+    signupSection?.classList.remove("d-none");
+    history.replaceState(null, null, "index.html");
+  }
 });
