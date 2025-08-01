@@ -243,4 +243,39 @@ document.addEventListener("DOMContentLoaded", function () {
       startQuiz();
     });
   }
+
+// Login button logic 
+  // ✅ Login button shows login form
+  const loginBtn = document.getElementById("login-btn");
+  const loginSection = document.getElementById("login-section");
+
+  if (loginBtn && loginSection) {
+    loginBtn.addEventListener("click", function () {
+      const startSection = document.getElementById("start-section") || document.querySelector(".hero-section");
+      const signupSection = document.getElementById("signup-section");
+
+      if (startSection) startSection.classList.add("d-none");
+      if (signupSection) signupSection.classList.add("d-none");
+      loginSection.classList.remove("d-none");
+    });
+  }
+
+  // ✅ Login form submission logic
+  const loginForm = document.getElementById("login-form");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("login-username").value.trim();
+      const password = document.getElementById("login-password").value.trim();
+
+      if (!username || !password) {
+        alert("Please enter both username and password.");
+        return;
+      }
+
+      alert("Login successful!");
+      loginSection.classList.add("d-none");
+      window.location.href = "play.html"; // ✅ Go to quiz page
+    });
+  }
 });
