@@ -164,12 +164,20 @@ main {
   width: 20px !important;
   height: 20px !important;
   flex: 0 0 20px !important;
-  background-color: #ccc;
   border: 1px solid white;
   border-radius: 2px;
   box-sizing: border-box;
-  display: inline-block;
-  background-color: transparent; /* 👈 this ensures it's blank initially */
+
+  /* Centering content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: white;
+  background-color: #222; /* dark neutral base */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .progress-streak {
@@ -183,6 +191,10 @@ main {
   margin-inline: auto;
   margin-top: 0.4rem;
   padding: 0;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+
 }
 #streak-message {
   font-size: 1.2rem;
@@ -191,6 +203,18 @@ main {
   margin-top: 10px;
   min-height: 1.5em; /* ensures space even when empty */
 }
+.streak-player {
+  background-color: #164A1A; /* Bootstrap green */
+  color: #fff;
+}
+
+.streak-opponent {
+  background-color: #D30731; /* Bootstrap red */
+  color: #fff;
+}
+
+
+
 /* ACCORDIONS */
 
 .accordion-body {

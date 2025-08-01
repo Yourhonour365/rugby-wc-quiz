@@ -211,7 +211,8 @@ function restartQuiz() {
 
   // ✅ Reset all streak progress blocks (top + bottom bars)
   document.querySelectorAll(".streak-block").forEach(block => {
-    block.classList.remove("bg-success", "bg-danger");
+    block.textContent = "";
+  block.classList.remove("bg-success", "bg-danger", "streak-player", "streak-opponent");
   });
 
   // 💬 Clear any streak message
