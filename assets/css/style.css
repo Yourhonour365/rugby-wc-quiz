@@ -1,602 +1,541 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* ROOT COLOURS */
-:root {
-  --turf-dark: #164A1A;
-  --turf-medium: #2C6B2F;
-  --turf-light: #7CB342;
-  --stadium-gray: #6E6E6E;
-  --argentina-sky: #74ACDF;
-  --italy-blue: #0096D6;
-  --ireland-green: #169B62;
-  --scotland-blue: #002663;
-  --wales-red: #D30731;
-  --southafrica-green: #006847;
-  --australia-gold: #CC9900;
-  --france-blue: #0055A4;
-  --england-red: #C8102E;
-  --new-zealand-black: #000000;
- 
+ :root {
+     --turf-dark: #164A1A;
+     --turf-medium: #2C6B2F;
+     --turf-light: #7CB342;
+     --stadium-gray: #6E6E6E;
+     --argentina-sky: #74ACDF;
+     --italy-blue: #0096D6;
+     --ireland-green: #169B62;
+     --scotland-blue: #002663;
+     --wales-red: #D30731;
+     --southafrica-green: #006847;
+     --australia-gold: #CC9900;
+     --france-blue: #0055A4;
+     --england-red: #C8102E;
+     --new-zealand-black: #000000;
 }
-#quiz-container.show-scorecard {
-  display: block !important;
+ #quiz-container.show-scorecard {
+     display: block !important;
 }
 /* GLOBAL STYLES */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', 'Open Sans', sans-serif;
-  background-color: var(--turf-medium);
-  color: white;
-  overflow-x: hidden;
-  height: 100%;
+ html, body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+     font-family: 'Roboto', 'Open Sans', sans-serif;
+     background-color: var(--turf-medium);
+     color: white;
+     overflow-x: hidden;
+     height: 100%;
 }
-
-.lead {
-  font-size: 1.5rem !important;
+ .lead {
+     font-size: 1.5rem !important;
 }
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+ body {
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
 }
-
-main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--stadium-gray);
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+ main {
+     flex-grow: 1;
+     display: flex;
+     flex-direction: column;
+     background-color: var(--stadium-gray);
+     margin-top: 0 !important;
+     padding-top: 0 !important;
 }
-
 /* NAVBAR */
-.navbar .nav-link {
-  color: white;
-  transition: color 0.3s ease;
-  z-index: 10;
-  position: relative;
+ .navbar .nav-link {
+     color: white;
+     transition: color 0.3s ease;
+     z-index: 10;
+     position: relative;
 }
-
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: var(--argentina-sky);
-  font-weight: 600;
+ .navbar .nav-link:hover, .navbar .nav-link.active {
+     color: var(--argentina-sky);
+     font-weight: 600;
 }
-
-
 /* Remove unwanted background/border from collapsed navbar */
-.navbar-collapse {
-  background-color: transparent !important;
-  border-top: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important;
+ .navbar-collapse {
+     background-color: transparent !important;
+     border-top: none !important;
+     margin: 0 !important;
+     padding: 0 !important;
+     box-shadow: none !important;
 }
-
 /* Ensure there's no margin pushing things down */
-.navbar {
-  margin-bottom: 0 !important;
-  border-bottom: none !important;
+ .navbar {
+     margin-bottom: 0 !important;
+     border-bottom: none !important;
 }
-.nav-link {
-  color: white !important;
+ .nav-link {
+     color: white !important;
 }
-
-
-.navbar-toggler {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-  border: none !important;
+ .navbar-toggler {
+     margin-bottom: 0 !important;
+     padding-bottom: 0 !important;
+     border: none !important;
 }
 /* HERO SECTION */
-.hero-section
-{
-  background-image: url("../images/stadium-xxl.webp");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--stadium-gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  min-height: 100dvh; /* updated! */
-  padding: 2rem;
-  padding-bottom: env(safe-area-inset-bottom, 1rem);
-  position: relative;
-  overflow: hidden;
-  color: white;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-
+ .hero-section {
+     background-image: url("../images/stadium-xxl.webp");
+     background-size: 100% 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-color: var(--stadium-gray);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     width: 100%;
+     min-height: 100dvh;
+    /* updated! */
+     padding: 2rem;
+     padding-bottom: env(safe-area-inset-bottom, 1rem);
+     position: relative;
+     overflow: hidden;
+     color: white;
+     margin-top: 0 !important;
+     padding-top: 0 !important;
 }
-.hero-section .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 0 !important;
-  padding-top: 2rem;
-  min-height: 100dvh;
+ .hero-section .container {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     margin-top: 0 !important;
+     padding-top: 2rem;
+     min-height: 100dvh;
 }
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Adjust to 0.3–0.6 for more or less darkness */
-  z-index: 0;
+ .hero-section::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.4);
+    /* Adjust to 0.3–0.6 for more or less darkness */
+     z-index: 0;
 }
-
 /* Ensure content appears above overlay */
-.hero-section > *{
-  position: relative;
-  z-index: 2;
+ .hero-section > *{
+     position: relative;
+     z-index: 2;
 }
-
-.hero-section .container {
-  position: relative;
-  z-index: 2;
+ .hero-section .container {
+     position: relative;
+     z-index: 2;
 }
-
-.feedback-section,
- .top-section {
-  background-image: url("../images/stadium-xxl.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 95dvh;
-  padding: 2rem 0;
-  width: 100vw;
-  position: relative;
-  overflow: hidden;
+ .feedback-section, .top-section {
+     background-image: url("../images/stadium-xxl.webp");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     min-height: 95dvh;
+     padding: 2rem 0;
+     width: 100vw;
+     position: relative;
+     overflow: hidden;
 }
-
-.feedback-section > .container,
-.top-section > .container {
-  position: relative;
-  z-index: 1;
-  max-width: 960px;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.3); /* optional inner panel */
-  border-radius: 8px;
-  padding: 2rem;
+ .feedback-section > .container, .top-section > .container {
+     position: relative;
+     z-index: 1;
+     max-width: 960px;
+     margin: auto;
+     background-color: rgba(0, 0, 0, 0.3);
+    /* optional inner panel */
+     border-radius: 8px;
+     padding: 2rem;
 }
-
-
-#signup-section {
-  background-color: #212529; /* Bootstrap dark */
-  color: white;
-  padding: 2rem;
-  margin-top: 2rem;
-  border-radius: 10px;
+ #signup-section {
+     background-color: #212529;
+    /* Bootstrap dark */
+     color: white;
+     padding: 2rem;
+     margin-top: 2rem;
+     border-radius: 10px;
 }
-.auth-section {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../images/stadium-xxl.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--stadium-gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+ .auth-section {
+     width: 100vw;
+     height: 100vh;
+     background-image: url("../images/stadium-xxl.webp");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-color: var(--stadium-gray);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
 }
-
-.auth-section::before {
-   content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 0;
+ .auth-section::before {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background: rgba(0, 0, 0, 0.5);
+     z-index: 0;
 }
-
-.auth-section form {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
-  width: 100%;
-  max-width: 500px;
-  background-color: rgba(0, 0, 0, 0.8); /* dark transparent background */
-  border-radius: 10px;
+ .auth-section form {
+     position: relative;
+     z-index: 2;
+     padding: 2rem;
+     width: 100%;
+     max-width: 500px;
+     background-color: rgba(0, 0, 0, 0.8);
+    /* dark transparent background */
+     border-radius: 10px;
 }
-
-main, section, .auth-section {
-  margin: 0 !important;
-  padding: 0 !important;
+ main, section, .auth-section {
+     margin: 0 !important;
+     padding: 0 !important;
 }
 /* STADIUM IMAGE */
-.stadium-image-wrapper {
-  background-image: url("../images/stadium-xxl.webp");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--stadium-gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  min-height: 100dvh; /* updated! */
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  color: white;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  
+ .stadium-image-wrapper {
+     background-image: url("../images/stadium-xxl.webp");
+     background-size: 100% 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-color: var(--stadium-gray);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     width: 100%;
+     min-height: 100dvh;
+    /* updated! */
+     padding: 2rem;
+     position: relative;
+     overflow: hidden;
+     color: white;
+     margin-top: 0 !important;
+     padding-top: 0 !important;
 }
-.stadium-image-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* dark overlay */
-  z-index: 0;
-  pointer-events: none;
+ .stadium-image-wrapper::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.4);
+    /* dark overlay */
+     z-index: 0;
+     pointer-events: none;
 }
-.stadium-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
+ .stadium-image {
+     width: 100%;
+     height: auto;
+     display: block;
+     object-fit: contain;
 }
-
-#start-section {
-  margin-top: 2rem;
-  z-index: 1;
+ #start-section {
+     margin-top: 2rem;
+     z-index: 1;
 }
-.score-progress-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  width: auto;
-  margin: 0 auto;
+ .score-progress-container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 0.75rem;
+     width: auto;
+     margin: 0 auto;
 }
-
-.team-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+ .team-icon {
+     width: 32px;
+     height: 32px;
+     object-fit: contain;
 }
-
-.center-scoreboard {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 0.3rem 0.8rem;
-  border-radius: 0.3rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  min-width: 80px;
-  text-align: center;
+ .center-scoreboard {
+     background-color: rgba(0, 0, 0, 0.7);
+     padding: 0.3rem 0.8rem;
+     border-radius: 0.3rem;
+     font-size: 1.2rem;
+     font-weight: bold;
+     color: white;
+     min-width: 80px;
+     text-align: center;
 }
-
-#question-text {
-  background-color: rgba(0, 0, 0, 1); /* or use a color variable */
-  color: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-weight: normal;
-  font-size: 1.2rem;
-  backdrop-filter: blur(2px); /* optional: adds blur behind */
-  z-index: 1;
+ #question-text {
+     background-color: rgba(0, 0, 0, 1);
+    /* or use a color variable */
+     color: white;
+     padding: 1rem;
+     border-radius: 0.5rem;
+     margin-bottom: 1rem;
+     text-align: center;
+     font-weight: normal;
+     font-size: 1.2rem;
+     backdrop-filter: blur(2px);
+    /* optional: adds blur behind */
+     z-index: 1;
 }
-.option-btn {
-  background-color: transparent !important;
-  color: #ffffff;
-  border: 1px solid #ffffff; /* or your preferred outline */
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  border-radius: 0;
-  font-weight: bold;
-  width: 100%;
-  transition: background-color 0.3s ease;
+ .option-btn {
+     background-color: transparent !important;
+     color: #ffffff;
+     border: 1px solid #ffffff;
+    /* or your preferred outline */
+     padding: 0.75rem;
+     margin: 0.5rem 0;
+     border-radius: 0;
+     font-weight: bold;
+     width: 100%;
+     transition: background-color 0.3s ease;
 }
-
-.option-btn:hover {
-  background-color: #ccc;
+ .option-btn:hover {
+     background-color: #ccc;
 }
-#options-container .option-btn {
-  margin-top: 0.2rem!important;
-  margin-bottom: 0.2rem!important;
+ #options-container .option-btn {
+     margin-top: 0.2rem!important;
+     margin-bottom: 0.2rem!important;
 }
-.streak-block {
-  width: 20px !important;
-  height: 20px !important;
-  flex: 0 0 20px !important;
-  border: 1px solid white;
-  border-radius: 2px;
-  box-sizing: border-box;
-
-  /* Centering content */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-weight: bold;
-  font-size: 0.85rem;
-  color: white;
-  background-color: #222; /* dark neutral base */
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  line-height: 1 !important;
-  border: none; /* optional: remove inner padding lines */
+ .streak-block {
+     width: 20px !important;
+     height: 20px !important;
+     flex: 0 0 20px !important;
+     border: 1px solid white;
+     border-radius: 2px;
+     box-sizing: border-box;
+    /* Centering content */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-weight: bold;
+     font-size: 0.85rem;
+     color: white;
+     background-color: #222;
+    /* dark neutral base */
+     transition: background-color 0.3s ease, color 0.3s ease;
+     line-height: 1 !important;
+     border: none;
+    /* optional: remove inner padding lines */
 }
-
-.progress-streak {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.3rem;
-  width: max-content;
-  max-width: 100%;
-  margin-inline: auto;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding: 0;
-  font-weight: bold;
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-
+ .progress-streak {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: nowrap;
+     gap: 0.3rem;
+     width: max-content;
+     max-width: 100%;
+     margin-inline: auto;
+     margin-top: 0 !important;
+     margin-bottom: 0 !important;
+     padding: 0;
+     font-weight: bold;
+     justify-content: center;
+     align-items: center;
+     line-height: 1;
 }
-#streak-message {
-  font-size: 1.2rem;
-  text-align: center;
-  color: white;
-  margin-top: 10px;
-  min-height: 1.5em; /* ensures space even when empty */
+ #streak-message {
+     font-size: 1.2rem;
+     text-align: center;
+     color: white;
+     margin-top: 10px;
+     min-height: 1.5em;
+    /* ensures space even when empty */
 }
-.streak-player {
-  background-color: #164A1A; /* Bootstrap green */
-  color: #fff;
+ .streak-player {
+     background-color: #164A1A;
+    /* Bootstrap green */
+     color: #fff;
 }
-
-.streak-opponent {
-  background-color: #D30731; /* Bootstrap red */
-  color: #fff;
+ .streak-opponent {
+     background-color: #D30731;
+    /* Bootstrap red */
+     color: #fff;
 }
-
-.btn-dark {
-
-  background-color: #0055A4;
+ .btn-dark {
+     background-color: #0055A4;
 }
-
 /* ACCORDIONS */
-
-.accordion-body {
-background-color: #003322;
-
+ .accordion-body {
+     background-color: #003322;
 }
-
-
-.accordion-button:focus {
-  box-shadow: none;
+ .accordion-button:focus {
+     box-shadow: none;
 }
-
-.accordion-button:not(.collapsed) {
-  background-color: var(--turf-medium);
-  color: white;
-  border-radius: 0;
+ .accordion-button:not(.collapsed) {
+     background-color: var(--turf-medium);
+     color: white;
+     border-radius: 0;
 }
-
-.accordion-button::after {
-  filter: brightness(0) invert(1); /* makes the arrow white */
+ .accordion-button::after {
+     filter: brightness(0) invert(1);
+    /* makes the arrow white */
 }
-
-.accordion-item .accordion-header > div {
-  font-weight: bold;
-  font-size: 1.1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ .accordion-item .accordion-header > div {
+     font-weight: bold;
+     font-size: 1.1rem;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-.accordion-item {
-  border-radius: 0 !important;
+ .accordion-item {
+     border-radius: 0 !important;
 }
-
-#teams-button {
-  background-color: #164A1A !important; 
+ #teams-button {
+     background-color: #164A1A !important;
 }
-
-#legends-button
-{
-  background-color: #2C6B2F !important; 
+ #legends-button {
+     background-color: #2C6B2F !important;
 }
-
-#records-button {
-  background-color: #164A1A !important; 
+ #records-button {
+     background-color: #164A1A !important;
 }
-
-#results-button {
-  background-color: #2C6B2F !important; 
+ #results-button {
+     background-color: #2C6B2F !important;
 }
-
-.new-zealand {
-background-color: var(--new-zealand-black) !important;
-border-radius: 0 !important;
- 
+ .new-zealand {
+     background-color: var(--new-zealand-black) !important;
+     border-radius: 0 !important;
 }
-.south-africa {
-background-color: var(--southafrica-green) !important;
-border-radius: 0 !important;  
+ .south-africa {
+     background-color: var(--southafrica-green) !important;
+     border-radius: 0 !important;
 }
-.france {
-background-color: var(--france-blue) !important;
-border-radius: 0 !important;  
+ .france {
+     background-color: var(--france-blue) !important;
+     border-radius: 0 !important;
 }
-
-.Argentina {
-background-color: var(--argentina-sky) !important;
-border-radius: 0 !important;  
+ .Argentina {
+     background-color: var(--argentina-sky) !important;
+     border-radius: 0 !important;
 }
-.Australia {
-background-color: var(--australia-gold) !important;
-border-radius: 0 !important;  
+ .Australia {
+     background-color: var(--australia-gold) !important;
+     border-radius: 0 !important;
 }
-.England {
-background-color: var(--england-red) !important;
-border-radius: 0 !important;  
+ .England {
+     background-color: var(--england-red) !important;
+     border-radius: 0 !important;
 }
-.Ireland {
-background-color: var(--ireland-green) !important;
-border-radius: 0 !important;  
+ .Ireland {
+     background-color: var(--ireland-green) !important;
+     border-radius: 0 !important;
 }
-.Italy {
-background-color: var(--italy-blue) !important;
-border-radius: 0 !important;  
+ .Italy {
+     background-color: var(--italy-blue) !important;
+     border-radius: 0 !important;
 }
-.Scotland {
-background-color: var(--scotland-blue) !important;
-border-radius: 0 !important;  
+ .Scotland {
+     background-color: var(--scotland-blue) !important;
+     border-radius: 0 !important;
 }
-.Wales {
-background-color: var(--wales-red) !important;
-border-radius: 0 !important;  
+ .Wales {
+     background-color: var(--wales-red) !important;
+     border-radius: 0 !important;
 }
-
-
 /* FEEDBACK PAGE */
-.feedback-section {
-  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+ .feedback-section {
+     padding-bottom: calc(4rem + env(safe-area-inset-bottom));
 }
-
-form {
-  padding-bottom: 4rem;
+ form {
+     padding-bottom: 4rem;
 }
-
-form input,
-form textarea,
-form select,
-form button {
-  border-radius: 0 !important;
+ form input, form textarea, form select, form button {
+     border-radius: 0 !important;
 }
-
-.form-control,
-.form-select {
-background-color: #164A1A !important; 
+ .form-control, .form-select {
+     background-color: #164A1A !important;
 }
-
-input::placeholder,
-textarea::placeholder,
-select::placeholder {
-  color: #ccc !important; /* Light grey */
-  opacity: 1 !important;  /* Ensures full visibility */
+ input::placeholder, textarea::placeholder, select::placeholder {
+     color: #ccc !important;
+    /* Light grey */
+     opacity: 1 !important;
+    /* Ensures full visibility */
 }
-.card-img-top {
-  height: 200px;         /* or any desired uniform height */
-  object-fit: contain; /* Keeps full image visible */
-  background-color: #000; /* Optional: fills space if image is smaller */
+ .card-img-top {
+     height: 200px;
+    /* or any desired uniform height */
+     object-fit: contain;
+    /* Keeps full image visible */
+     background-color: #000;
+    /* Optional: fills space if image is smaller */
 }
 /* Target all tables inside .accordion-body */
-.accordion-body table {
-  background-color: var(--turf-dark); /* dark row background */
-  color: white;
-  font-size: 0.95rem;
+ .accordion-body table {
+     background-color: var(--turf-dark);
+    /* dark row background */
+     color: white;
+     font-size: 0.95rem;
 }
-
 /* Table headers */
-.accordion-body table thead th {
-  background-color: var(--turf-medium); /* header green */
-  color: white;
-  font-size: 1rem;
+ .accordion-body table thead th {
+     background-color: var(--turf-medium);
+    /* header green */
+     color: white;
+     font-size: 1rem;
 }
-
-.table td:last-child,
-.table th:last-child {
-  text-align: center;
+ .table td:last-child, .table th:last-child {
+     text-align: center;
 }
-
 /* Force all tables to use equal column widths */
-.results-tables table,
-.records-tables table {
-  table-layout: fixed;
-  width: 100%;
+ .results-tables table, .records-tables table {
+     table-layout: fixed;
+     width: 100%;
 }
-.results-tables td,
-.results-tables th,
-.records-tables td,
-.records-tables th {
-  vertical-align: middle;
+ .results-tables td, .results-tables th, .records-tables td, .records-tables th {
+     vertical-align: middle;
 }
-
 /* FOOTER */
-footer {
-  flex-shrink: 0;
-  background-color: var(--turf-dark);
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  padding-bottom: env(safe-area-inset-bottom, 1rem);
-  font-size: 0.6rem;
+ footer {
+     flex-shrink: 0;
+     background-color: var(--turf-dark);
+     color: white;
+     text-align: center;
+     padding: 1rem 0;
+     padding-bottom: env(safe-area-inset-bottom, 1rem);
+     font-size: 0.6rem;
 }
-
-footer .social-icons {
-  margin-top: 0.5rem;
-  padding-bottom: env(safe-area-inset-bottom, 1rem);
+ footer .social-icons {
+     margin-top: 0.5rem;
+     padding-bottom: env(safe-area-inset-bottom, 1rem);
 }
-
-footer .social-icons a {
-  color: white;
-  margin: 0 0.5rem;
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  vertical-align: middle;
+ footer .social-icons a {
+     color: white;
+     margin: 0 0.5rem;
+     font-size: 1.5rem;
+     text-decoration: none;
+     transition: color 0.3s ease;
+     vertical-align: middle;
 }
-
-footer .social-icons a:hover {
-  color: var(--argentina-sky);
+ footer .social-icons a:hover {
+     color: var(--argentina-sky);
 }
-
-
 /* MEDIA QUERIES */
-@media (max-width: 768px) {
-  .hero-section {
-    min-height: calc(100dvh - 56px - 80px);
-    background-position: center top;
-  }
+ @media (max-width: 768px) {
+     .hero-section {
+         min-height: calc(100dvh - 56px - 80px);
+         background-position: center top;
+    }
 }
-
 /* Responsive font sizing */
-@media (max-width: 576px) {
-  .accordion-body table thead th,
-  .accordion-body table tbody td {
-    font-size: 0.75rem;
-    padding: 0.4rem;
-  }
+ @media (max-width: 576px) {
+     .accordion-body table thead th, .accordion-body table tbody td {
+         font-size: 0.75rem;
+         padding: 0.4rem;
+    }
 }
-@media (max-width: 576px) {
-  .accordion-body h4 {
-    font-size: 0.75rem; /* Default h5 is ~1.25rem */
-    margin-top: 0.5rem;
-  }
+ @media (max-width: 576px) {
+     .accordion-body h4 {
+         font-size: 0.75rem;
+        /* Default h5 is ~1.25rem */
+         margin-top: 0.5rem;
+    }
 }
-
-@media (max-width: 576px) {
-  .results-tables h5,
-  .records-tables h5 {
-    font-size: 1rem;
-    margin-top: 0.75rem;
-  }
+ @media (max-width: 576px) {
+     .results-tables h5, .records-tables h5 {
+         font-size: 1rem;
+         margin-top: 0.75rem;
+    }
 }
-@media (min-height: 569px) {
-  .team-icon {
-    width: 88px;
-    height: 88px;
-  }
+ @media (min-height: 569px) {
+     .team-icon {
+         width: 88px;
+         height: 88px;
+    }
 }
-
-
+ 
