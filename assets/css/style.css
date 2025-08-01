@@ -13,9 +13,9 @@
   --wales-red: #D30731;
   --southafrica-green: #006847;
   --australia-gold: #CC9900;
-   --france-blue: #0055A4;
-   --england-red: #C8102E;
-   --new-zealand-black: #000000;
+  --france-blue: #0055A4;
+  --england-red: #C8102E;
+  --new-zealand-black: #000000;
  
 }
 
@@ -93,6 +93,14 @@ main {
 .hero-section .container {
   position: relative;
   z-index: 2;
+}
+
+#signup-section {
+  background-color: #212529; /* Bootstrap dark */
+  color: white;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 10px;
 }
 
 /* STADIUM IMAGE */
