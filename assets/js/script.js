@@ -100,20 +100,23 @@ function handleAnswerClick(e) {
     let bonusMessage = "";
 
     switch (streak) {
-      case 3:
-        points = 5;
-        bonusMessage = "great try!";
-        break;
-      case 4:
-        points = 2;
-        bonusMessage = "solid conversion!";
-        break;
-      case 5:
-        points = 3;
-        bonusMessage = "penalty kick!";
-        break;
-    }
-
+ case 3:
+      points = 5;
+      bonusMessage = "great try!";
+      break;
+    case 4:
+      points = 2;
+      bonusMessage = "solid conversion!";
+      break;
+    case 5:
+      points = 3;
+      bonusMessage = "penalty kick!";
+      streak = 0; // ✅ Reset after 5
+      break;
+    default:
+      points = 0; // No reward for streaks 1–2 or after reset
+      bonusMessage = "";
+}
     message = `Correct!${bonusMessage ? " — " + bonusMessage : ""}`;
     score += points;
     document.getElementById("playerScore").textContent = score;
