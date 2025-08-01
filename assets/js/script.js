@@ -90,12 +90,12 @@ function handleAnswerClick(e) {
   const isCorrect = selected === correct;
 
   let message = "";
-
+let points = 0;
   if (isCorrect) {
     streak++;
     opponentStreak = 0;
 
-    let points = 0;
+    
     let bonusMessage = "";
 
     switch (streak) {
@@ -147,7 +147,7 @@ function handleAnswerClick(e) {
   showStreakMessage(message);
 
   document.querySelectorAll(".option-btn").forEach(btn => btn.disabled = true);
-  updateProgressBar(isCorrect);
+  updateProgressBar(isCorrect, points);
 
   setTimeout(() => {
     currentIndex++;
@@ -160,10 +160,18 @@ function handleAnswerClick(e) {
 }
 
 // ===== Update Progress Bar =====
-function updateProgressBar(isCorrect) {
-  const blocks = document.querySelectorAll(".progress-block");
-  if (blocks[currentIndex]) {
-    blocks[currentIndex].classList.add(isCorrect ? "bg-success" : "bg-danger");
+function updateProgressBar(isCorrect, pointsScored) {
+  const bottomBlocks = document.querySelectorAll("#bottom-progress .streak-block");
+  const topBlocks = document.querySelectorAll("#top-progress .streak-block");
+
+  // Always mark the bottom bar: red or green
+  if (bottomBlocks[currentIndex]) {
+    bottomBlocks[currentIndex].classList.add(isCorrect ? "bg-success" : "bg-danger");
+  }
+
+  // Only mark the top bar if player scored points (Try, Conversion, etc)
+  if (isCorrect && pointsScored > 0 && topBlocks[currentIndex]) {
+    topBlocks[currentIndex].classList.add("bg-success");
   }
 }
 
@@ -197,9 +205,9 @@ function restartQuiz() {
   document.getElementById("playerScore").textContent = 0;
   document.getElementById("opponentScore").textContent = 0;
 
-  // Clear progress bar visuals
-  document.querySelectorAll(".progress-block").forEach(b => {
-    b.classList.remove("bg-success", "bg-danger");
+  // ✅ Reset all streak progress blocks (top + bottom bars)
+  document.querySelectorAll(".streak-block").forEach(block => {
+    block.classList.remove("bg-success", "bg-danger");
   });
 
   // 💬 Clear any streak message
