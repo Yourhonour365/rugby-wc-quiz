@@ -99,6 +99,7 @@ const rugbyQuestions = [
 { question: "What is the maximum number of replacements a team can have available for a rugby world cup match?", options: ["4", "6", "8", "10"], answer: "8", difficulty: "Med" },
 ];
 
+// Quiz setup
 const MAX_QUESTIONS = 12;
 let availableQuestions = [...rugbyQuestions];
 let selectedQuestions = [];
@@ -108,45 +109,43 @@ let streak = 0;
 let oppositionScore = 0;
 
 function selectQuestions() {
-  for (let i = 0; i < MAX_QUESTIONS; i++) {
+  selectedQuestions = [];
+  for (let i = 0; i < MAX_QUESTIONS && availableQuestions.length; i++) {
     const randIndex = Math.floor(Math.random() * availableQuestions.length);
     selectedQuestions.push(availableQuestions.splice(randIndex, 1)[0]);
   }
 }
 
 function displayQuestion() {
-  const questionData = selectedQuestions[currentIndex];
-  document.getElementById("question").textContent = questionData.question;
+  const q = selectedQuestions[currentIndex];
+  document.getElementById("question").textContent = q.question;
   const buttons = document.querySelectorAll(".option-btn");
-
-  buttons.forEach((btn, index) => {
-    btn.textContent = questionData.options[index];
+  buttons.forEach((btn, i) => {
+    btn.textContent = q.options[i];
     btn.classList.remove("btn-success", "btn-danger", "disabled");
     btn.disabled = false;
   });
 }
 
-function handleAnswerClick(event) {
-  const selected = event.target.textContent;
+function handleAnswerClick(e) {
+  const selected = e.target.textContent;
   const correct = selectedQuestions[currentIndex].answer;
   const isCorrect = selected === correct;
 
   if (isCorrect) {
     streak++;
-    if (streak >= 5) score += 5;
-    else if (streak >= 3) score += 3;
-    else score += 2;
-
+    score += streak >= 5 ? 5 : streak >= 3 ? 3 : 2;
     document.getElementById("playerScore").textContent = score;
-    event.target.classList.add("btn-success");
+    e.target.classList.add("btn-success");
   } else {
     streak = 0;
     oppositionScore += 3;
     document.getElementById("opponentScore").textContent = oppositionScore;
-    event.target.classList.add("btn-danger");
+    e.target.classList.add("btn-danger");
   }
 
   document.querySelectorAll(".option-btn").forEach(btn => btn.disabled = true);
+  updateProgressBar();
 
   setTimeout(() => {
     currentIndex++;
@@ -155,11 +154,19 @@ function handleAnswerClick(event) {
     } else {
       showFinalScore();
     }
-  }, 500);
+  }, 600);
+}
+
+function updateProgressBar() {
+  const blocks = document.querySelectorAll(".progress-block");
+  if (blocks[currentIndex]) {
+    blocks[currentIndex].classList.add(streak ? "bg-success" : "bg-danger");
+  }
 }
 
 function showFinalScore() {
-  document.getElementById("quiz-container").innerHTML = `
+  const quiz = document.getElementById("quiz-container");
+  quiz.innerHTML = `
     <h2 class="text-white">Full Time!</h2>
     <p class="text-white">Your final score: ${score}</p>
     <button class="btn btn-light mt-3" onclick="restartQuiz()">Play Again</button>
@@ -167,115 +174,109 @@ function showFinalScore() {
 }
 
 function restartQuiz() {
-  document.getElementById("quiz-container").innerHTML = "";
-  document.getElementById("start-section").classList.add("d-none");
-  document.getElementById("quiz-engine").classList.remove("d-none");
-
-  selectedQuestions = [];
-  currentIndex = 0;
-  score = 0;
-  oppositionScore = 0;
-  streak = 0;
+  document.getElementById("quiz-container").innerHTML = originalQuizHTML;
+  currentIndex = score = streak = oppositionScore = 0;
   availableQuestions = [...rugbyQuestions];
-
   selectQuestions();
   displayQuestion();
-}
-
-function startQuiz() {
-  selectedQuestions = [];
-  currentIndex = 0;
-  score = 0;
-  oppositionScore = 0;
-  streak = 0;
-  availableQuestions = [...rugbyQuestions];
-
-  selectQuestions();
-  displayQuestion();
-
   document.querySelectorAll(".option-btn").forEach(btn => {
     btn.addEventListener("click", handleAnswerClick);
   });
+  document.getElementById("playerScore").textContent = 0;
+  document.getElementById("opponentScore").textContent = 0;
+  document.querySelectorAll(".progress-block").forEach(b => b.classList.remove("bg-success", "bg-danger"));
 }
 
-// DOMContentLoaded — page is ready
+// Save original quiz HTML for reuse
+let originalQuizHTML = "";
 document.addEventListener("DOMContentLoaded", function () {
-  // Create Account button logic
-  const createAccountBtn = document.getElementById("create-account-btn");
-  const startSection = document.getElementById("start-section") || document.querySelector(".hero-section");
-  const signupSection = document.getElementById("signup-section");
+  const quiz = document.getElementById("quiz-container");
+  if (quiz) originalQuizHTML = quiz.innerHTML;
 
-  if (createAccountBtn && startSection && signupSection) {
-    createAccountBtn.addEventListener("click", function () {
-      startSection.classList.add("d-none");
-      signupSection.classList.remove("d-none");
-    });
-  }
-
-  const signupForm = document.getElementById("signup-form");
-  if (signupForm) {
-    signupForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const username = document.getElementById("signup-username").value.trim();
-      const password = document.getElementById("signup-password").value.trim();
-
-      if (!username || !password) {
-        alert("Please enter both username and password.");
-        return;
-      }
-
-      alert("Account created successfully!");
-      signupSection.classList.add("d-none");
-      if (startSection) startSection.classList.remove("d-none");
-    });
-  }
-
-  // Start button logic
   const startBtn = document.getElementById("start-btn");
   const scoreboard = document.querySelector(".center-scoreboard");
   const quizEngine = document.getElementById("quiz-engine");
 
   if (startBtn && scoreboard && quizEngine) {
     startBtn.addEventListener("click", function () {
-      startSection.classList.add("d-none");
+      document.getElementById("start-section")?.classList.add("d-none");
       scoreboard.classList.remove("d-none");
       quizEngine.classList.remove("d-none");
-      startQuiz();
+      selectQuestions();
+      displayQuestion();
+      document.querySelectorAll(".option-btn").forEach(btn => {
+        btn.addEventListener("click", handleAnswerClick);
+      });
     });
   }
 
-// Login button logic 
-  // ✅ Login button shows login form
+  // Login/Signup/Logout logic
+  const createAccountBtn = document.getElementById("create-account-btn");
   const loginBtn = document.getElementById("login-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+  const startSection = document.getElementById("start-section");
+  const signupSection = document.getElementById("signup-section");
   const loginSection = document.getElementById("login-section");
+  const startQuizLink = document.getElementById("start-quiz-link");
 
-  if (loginBtn && loginSection) {
-    loginBtn.addEventListener("click", function () {
-      const startSection = document.getElementById("start-section") || document.querySelector(".hero-section");
-      const signupSection = document.getElementById("signup-section");
-
-      if (startSection) startSection.classList.add("d-none");
-      if (signupSection) signupSection.classList.add("d-none");
-      loginSection.classList.remove("d-none");
-    });
+  const isLoggedIn = localStorage.getItem("rwcQuizLoggedIn") === "true";
+  if (isLoggedIn) {
+    createAccountBtn?.classList.add("d-none");
+    loginBtn?.classList.add("d-none");
+    logoutBtn?.classList.remove("d-none");
+    startQuizLink?.classList.remove("d-none");
   }
 
-  // ✅ Login form submission logic
+  logoutBtn?.addEventListener("click", () => {
+    localStorage.removeItem("rwcQuizLoggedIn");
+    location.reload();
+  });
+
+  createAccountBtn?.addEventListener("click", () => {
+    startSection?.classList.add("d-none");
+    signupSection?.classList.remove("d-none");
+  });
+
+  const signupForm = document.getElementById("signup-form");
+  signupForm?.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const username = document.getElementById("signup-username").value.trim();
+    const password = document.getElementById("signup-password").value.trim();
+    if (!username || !password) {
+      alert("Please enter both username and password.");
+      return;
+    }
+    localStorage.setItem("rwcQuizLoggedIn", "true");
+    alert("Account created!");
+    signupSection.classList.add("d-none");
+    startSection?.classList.remove("d-none");
+    createAccountBtn?.classList.add("d-none");
+    loginBtn?.classList.add("d-none");
+    logoutBtn?.classList.remove("d-none");
+    startQuizLink?.classList.remove("d-none");
+  });
+
+  loginBtn?.addEventListener("click", () => {
+    startSection?.classList.add("d-none");
+    loginSection?.classList.remove("d-none");
+  });
+
   const loginForm = document.getElementById("login-form");
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const username = document.getElementById("login-username").value.trim();
-      const password = document.getElementById("login-password").value.trim();
-
-      if (!username || !password) {
-        alert("Please enter both username and password.");
-        return;
-      }
-
-      alert("Login successful!");
-      loginSection.classList.add("d-none");
-      window.location.href = "play.html"; // ✅ Go to quiz page
-    });
-  }
+  loginForm?.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const username = document.getElementById("login-username").value.trim();
+    const password = document.getElementById("login-password").value.trim();
+    if (!username || !password) {
+      alert("Please enter both username and password.");
+      return;
+    }
+    localStorage.setItem("rwcQuizLoggedIn", "true");
+    alert("Login successful!");
+    loginSection.classList.add("d-none");
+    createAccountBtn?.classList.add("d-none");
+    loginBtn?.classList.add("d-none");
+    logoutBtn?.classList.remove("d-none");
+    startSection?.classList.remove("d-none");
+    startQuizLink?.classList.remove("d-none");
+  });
 });
