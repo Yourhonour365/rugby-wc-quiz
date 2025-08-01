@@ -106,12 +106,12 @@ function handleAnswerClick(e) {
       break;
     case 4:
       points = 2;
-      bonusMessage = "solid conversion!";
+      bonusMessage = "try converted!";
       break;
     case 5:
       points = 3;
       bonusMessage = "penalty kick!";
-      streak = 0; // ✅ Reset after 5
+      streak = 0; // Reset after 5
       break;
     default:
       points = 0; // No reward for streaks 1–2 or after reset
@@ -129,10 +129,10 @@ function handleAnswerClick(e) {
 
     if (opponentStreak === 0) {
       points = 0;
-      penaltyMessage = "possession conceded";
+      penaltyMessage = "possession conceded!";
     } else if (opponentStreak === 1) {
       points = 5;
-      penaltyMessage = "try conceded";
+      penaltyMessage = "try conceded!";
     } else if (opponentStreak === 2) {
       points = 2;
       penaltyMessage = "try converted!";
@@ -145,7 +145,7 @@ function handleAnswerClick(e) {
     document.getElementById("opponentScore").textContent = oppositionScore;
     e.target.classList.add("btn-danger");
 
-    message = `Incorrect ${penaltyMessage}`;
+    message = `Incorrect - ${penaltyMessage}`;
   }
 
   showStreakMessage(message);

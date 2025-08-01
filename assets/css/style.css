@@ -522,6 +522,7 @@ footer .social-icons a:hover {
   color: var(--argentina-sky);
 }
 
+
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .hero-section {
@@ -529,6 +530,7 @@ footer .social-icons a:hover {
     background-position: center top;
   }
 }
+
 /* Responsive font sizing */
 @media (max-width: 576px) {
   .accordion-body table thead th,
@@ -551,3 +553,11 @@ footer .social-icons a:hover {
     margin-top: 0.75rem;
   }
 }
+@media (min-height: 569px) {
+  .team-icon {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+
