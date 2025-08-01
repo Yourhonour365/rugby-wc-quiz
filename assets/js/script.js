@@ -243,20 +243,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const signupSection = document.getElementById("signup-section");
   const loginSection = document.getElementById("login-section");
   const startQuizLink = document.getElementById("start-quiz-link");
-  const authButtons = document.getElementById("auth-buttons");
-
   const isLoggedIn = localStorage.getItem("rwcQuizLoggedIn") === "true";
+  
+  const playAuthButtons = document.getElementById("auth-buttons");
+if (!isLoggedIn && playAuthButtons) {
+  playAuthButtons.classList.remove("d-none");
+}
+
+  
   if (isLoggedIn) {
-    createAccountBtn?.classList.add("d-none");
-    loginBtn?.classList.add("d-none");
-    logoutBtn?.classList.remove("d-none");
-    startQuizLink?.classList.remove("d-none");
-    authButtons?.classList.add("d-none");
-    startBtn?.classList.remove("d-none");
-  } else {
-    authButtons?.classList.remove("d-none");
-    startBtn?.classList.add("d-none");
-  }
+  createAccountBtn?.classList.add("d-none");
+  loginBtn?.classList.add("d-none");
+  logoutBtn?.classList.remove("d-none");
+  startQuizLink?.classList.remove("d-none");
+  playAuthButtons?.classList.add("d-none");
+  startBtn?.classList.remove("d-none");
+} else {
+  playAuthButtons?.classList.remove("d-none");
+  startBtn?.classList.add("d-none");
+}
 
   logoutBtn?.addEventListener("click", () => {
     localStorage.removeItem("rwcQuizLoggedIn");
@@ -317,6 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
     displayQuestion();
     
   });
+ 
 
   // Handle redirect fragments
   const hash = window.location.hash;
