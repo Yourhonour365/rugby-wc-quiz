@@ -100,7 +100,8 @@ main {
   border: none !important;
 }
 /* HERO SECTION */
-.hero-section {
+.hero-section
+{
   background-image: url("../images/stadium-xxl.webp");
   background-size: 100% 100%;
   background-position: center;
@@ -136,7 +137,7 @@ main {
 }
 
 /* Ensure content appears above overlay */
-.hero-section > * {
+.hero-section > *{
   position: relative;
   z-index: 2;
 }
@@ -146,6 +147,29 @@ main {
   z-index: 2;
 }
 
+.feedback-section {
+background-image: url("../images/stadium-xxl.webp"); /* Adjust path */
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 95dvh; /* updated! */
+  padding: 2rem;
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.top-section {
+  background-image: url("../images/stadium-xxl.webp"); /* Adjust path */
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 95dvh; /* updated! */
+  padding: 2rem;
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+  position: relative;
+  overflow: hidden;
+}
 #signup-section {
   background-color: #212529; /* Bootstrap dark */
   color: white;
@@ -191,7 +215,6 @@ main {
   display: block;
   object-fit: contain;
 }
-
 
 #start-section {
   margin-top: 2rem;
