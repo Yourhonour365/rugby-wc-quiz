@@ -435,4 +435,18 @@ document.addEventListener("DOMContentLoaded", function () {
     signupSection?.classList.remove("d-none");
     history.replaceState(null, null, "index.html");
   }
+  
+// Accordion scoll to top 
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+
+  accordionButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+      setTimeout(() => {
+        const headerTop = this.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: headerTop, behavior: 'smooth' });
+      }, 350);
+    });
+  });
+
+
 });
