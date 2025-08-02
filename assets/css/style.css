@@ -216,6 +216,20 @@ main,
   display: none !important;
 }
 
+/* Force white input text on dark/green backgrounds */
+.auth-section input.form-control {
+  background-color: #2C6B2F;  /* your green */
+  color: #fff;                /* white input text */
+  border: 1px solid #fff;     /* optional: white border for clarity */
+}
+
+/* Optional: white placeholder text */
+.auth-section input.form-control::placeholder {
+  color: #ccc;
+}
+
+
+
  main, section, .auth-section {
      margin: 0 !important;
      padding: 0 !important;
@@ -459,7 +473,9 @@ main,
 }
  .form-control, .form-select {
      background-color: #164A1A !important;
-}
+     color: #fff;
+    }
+
  input::placeholder, textarea::placeholder, select::placeholder {
      color: #ccc !important;
     /* Light grey */
