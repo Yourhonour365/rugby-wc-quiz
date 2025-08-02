@@ -99,7 +99,7 @@ I created all the questions manually using public information and facts from the
 
 ## Try It
 
-[Live Demo on GitHub Pages](https://your-username.github.io/rugby-quiz)
+[Live Demo on GitHub Pages](https://yourhonour365.github.io/rugby-wc-quiz/)
 
 ---
 
