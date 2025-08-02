@@ -390,6 +390,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     localStorage.setItem("rwcQuizLoggedIn", "true");
     alert("Account created!");
+    // Immediately go to quiz page
+    window.location.href = "play.html";
     signupSection?.classList.add("d-none");
     startSection?.classList.remove("d-none");
     createAccountBtn?.classList.add("d-none");
@@ -408,6 +410,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     localStorage.setItem("rwcQuizLoggedIn", "true");
     alert("Login successful!");
+
+     // Immediately go to quiz page
+    window.location.href = "play.html";
     loginSection?.classList.add("d-none");
     startSection?.classList.remove("d-none");
     createAccountBtn?.classList.add("d-none");
