@@ -30,6 +30,25 @@
      overflow-x: hidden;
      height: 100%;
 }
+
+body.play-page {
+  background-image: url("../images/stadium-xxl.webp");  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+#final-score,
+#final-score .container,
+main {
+  background: transparent !important;
+}
+main,
+#final-score {
+  margin: 0;
+  padding-top: 1rem;
+}
  .lead {
      font-size: 1.5rem !important;
 }
@@ -485,6 +504,13 @@
  .results-tables td, .results-tables th, .records-tables td, .records-tables th {
      vertical-align: middle;
 }
+#quiz-container {
+  background-image: url('assets/images/stadium.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* FOOTER */
  footer {
      flex-shrink: 0;
