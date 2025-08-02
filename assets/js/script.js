@@ -251,7 +251,7 @@ function handleAnswerClick(e) {
     } else {
       showFinalScore();
     }
-  }, 600);
+  }, 300);
 }
 
 // ===== Update Progress Bar =====
