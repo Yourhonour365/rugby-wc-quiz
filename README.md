@@ -2,6 +2,8 @@
 
 This is a mobile-first, interactive Rugby World Cup quiz I built as part of my web development course. It’s designed to be fun, fast-paced, and rugby-themed — with scoring inspired by real match play.
 
+
+![Quiz Screenshot](assets/images/screenshotsfulltime.png)
 ---
 
 ## How it Works
@@ -19,7 +21,7 @@ This is a mobile-first, interactive Rugby World Cup quiz I built as part of my w
 
 To build the question set efficiently:
 - I wrote all the **question, options, correct answer, and difficulty level** data in a **Google Sheet**
-- Then I used a custom **formula in the sheet** to convert each row into the correct **JavaScript format**
+- Then I created and used a custom **formula in the sheet** to convert each row into the correct **JavaScript format**
 - From there, I simply **copied and pasted the formatted output** directly into the `rugbyQuestions` array in my JS file
 
 > This helped save time, avoid typos, and make edits easier as the quiz grew
