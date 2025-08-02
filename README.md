@@ -14,7 +14,7 @@ This is a mobile-first, interactive Rugby World Cup quiz I built as part of my w
   - 5 correct = Penalty Kick (3 pts)
   - Wrong answers give the *opposition* a chance to score
 
-
+![Quiz Screenshot](assets/images/screenshots01.png)
 ### How I Created the Question Set
 
 To build the question set efficiently:
@@ -34,12 +34,31 @@ I also included a "Knowledge Zone" with expandable accordion sections where you 
 
 Each section includes visuals and tables, designed to be responsive and easy to read on mobile.
 
+![Quiz Screenshot](assets/images/screenshotknow.png)
+
+
 ## Tech Stack
 
-- HTML, CSS, and JavaScript
-- Bootstrap 5 for responsive layout and components
-- Google Fonts & Font Awesome
-- Hosted on GitHub Pages
+### Frontend
+- HTML5
+- CSS3 / Bootstrap 5
+- JavaScript (ES6)
+
+### Design, formatting & UI Testing
+- Snipping Tool (Windows) – for UI screenshot capture
+- Google Chrome DevTools – for live debugging, inspecting DOM/CSS, and performance checks
+- HTML Formatter – to format and clean HTML code
+- CSS Formatter – to format CSS for readability
+- W3C HTML Validator – to check for valid HTML
+- W3C CSS Validator – to validate stylesheets
+- Online photo editor to resize and edit icons and photos
+
+### Development Environment
+- Visual Studio Code
+- Git & GitHub for version control
+
+### Hosting
+- GitHub Pages
 
 ## Features
 
@@ -117,6 +136,11 @@ Throughout this project I used several tools and websites to support learning, d
 - [Font Awesome](https://fontawesome.com/) / [Google Fonts](https://fonts.google.com/) – for icons and typography
 - [GitHub Pages](https://pages.github.com/) – used to host and publish the project publicly
 - [Balsamiq](https://balsamiq.com/) – for sketching rough wireframes during early design planning
+- [CSS Formater](https://www.cleancss.com/css-beautify/) – for formatting CSS code
+- [HTML Formater](https://htmlformatter.com/) – for formatting HTML code
+- [W3C HTML Validator](https://validator.w3.org/) – to check for valid and accessible HTML
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) – to validate stylesheets
+- [Photopea](https://www.photopea.com/) – for editing images and photos 
 
 > This quiz was created for learning purposes. All imagery and content used is either generated, open source, or cited. If anything requires credit or removal, I’ll update it.
 
